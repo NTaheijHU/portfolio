@@ -19,37 +19,33 @@ export default function HeroHome() {
 
   const shouldReduceMotion = useReducedMotion();
 
-  let animateX = shouldReduceMotion ? { x:"0%" } : { x:"-300%" };
-  let animateY = shouldReduceMotion ? { y:"0%" } : { y:"-1000%" };
+  let animateArrow = shouldReduceMotion ? { opacity: 1 } : { opacity: 0 };
+  let animateDown = shouldReduceMotion ? { y:"0%" } : { y:"-1000%", opacity: 0 };
+  let animateUp = shouldReduceMotion ? { y:"0%" } : { y:"1000%", opacity: 0 };
 
   return (
     <section className="bg-white custom-hero-image" style={{backgroundImage: `url("header.jpg")`}}>
       <div className="custom-hero h-screen">
         <div className="max-w-full mx-auto xl:px-0 px-4 text-white font-semibold" style={styles.hero}>
-          <div className="w-full my-32 text-center">
+          <div className="w-full my-16 lg:my-64 text-center">
             <motion.div             
-              initial={animateY}
-              animate={{ y: "0%" }}
-              transition={{ duration: 0.8 }}
+              initial={animateDown}
+              animate={{ y: "0%", opacity: 1 }}
+              transition={{ delay: 1.0, duration: 0.8 }}
             >
               <h1 className="text-7xl">NOAH TAHEIJ</h1>
             </motion.div>
             <motion.div             
-              initial={animateY}
-              animate={{ y: "0%" }}
-              transition={{ duration: 0.8 }}
+              initial={animateUp}
+              animate={{ y: "0%", opacity: 1 }}
+              transition={{ delay: 2.8, duration: 0.8 }}
             >
               <h1 className="text-4xl my-16">WEBSITE & APPLICATION DEVELOPER</h1>
             </motion.div>
-            <motion.div
-              initial={animateX}
-              animate={{ x: "0%" }}
-              transition={{ duration: 1.1 }}
-            >
-            <a href="/" className="mx-8 py-4">
-              {/* <img src="arrow.svg" alt="Arrow Down" className="arrow-down" /> */}
-            </a>
-            </motion.div>
+            
+            <div className="grid justify-items-center">
+              <img src="arrow.svg" alt="Down Arrow" width="120" height="120" className="bottom" />
+            </div>
           </div>
         </div>
       </div>
