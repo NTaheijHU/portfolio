@@ -4,7 +4,7 @@ export default function LinkFooter() {
       <div className="lg:px-0 px-4 max-w-7xl mx-auto py-8">
         <div className="w-full flex flex-col sm:flex-row gap-2 justify-start">
           <div className="w-full md:w-1/4 flex flex-col gap-4 footer-panel md:items-start items-center">
-            <h2 className="sm:pb-4 text-3xl">Lokalized</h2>
+            <h2 className="sm:pb-4 text-3xl">Noah Taheij</h2>
             <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="tel:+31850150016">+31 (0)85 015 0016</a>
             <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="mailto:info@lokalized.nl">info@ntaheij.dev</a>
             <div className="flex flex-row gap-2 items-center">
