@@ -48,7 +48,7 @@ export default function HeroHome() {
               animate={{ opacity: 1 }}
               transition={{ delay: 2.6, duration: 0.8 }}
             >
-              <div className="grid justify-items-center lg:my-96">
+              <div className="grid justify-items-center lg:my-96" role="img" aria-label="Pijl voor scrollen">
                 <a href="#">
                   <img src="arrow.svg" alt="Down Arrow" width="120" height="120" className="hero-arrow bounce" />
                 </a>
