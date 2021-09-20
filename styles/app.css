@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+body {
+  font-family: 'Muli', sans-serif;
+}
+ 
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.custom-hero {
+  background-color: rgba(38, 54, 87, 0.7);
+}
+
+.custom-hero-image {
+  background-size: cover;
+}
+
+.overlay {
+  position: relative;
+  z-index: 40;
+}
+
+.invisible {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.arrow-down {
+  color: #ffff;
+  fill: #fff;
+}
+
+@media (max-width: 639px) {
+  .footer-panel:not(:first-child) {
+    margin-top: 1rem;
+  }
+}
+
+.flex-custom-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 767px) {
+  .flex-custom-row:nth-child(even) {
+    flex-direction: column;
+  }
+}
