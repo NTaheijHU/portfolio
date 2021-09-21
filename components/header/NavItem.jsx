@@ -13,7 +13,7 @@ export default function NavItem({ item }) {
   }
   return (
     <Link href={item.path}>
-      <a className="md:active:bg-gray-100 md:active:text-black md:hover:bg-gray-100 text-lg hover:text-black p-2 rounded-lg duration-200 ease-in-out"
+      <a className="md:active:bg-gray-100 md:active:text-black text-lg hover:text-black p-2 rounded-lg duration-200 ease-in-out hover-underline-animation"
                     role="button" aria-label={item.name}>
         {item.name}
       </a>

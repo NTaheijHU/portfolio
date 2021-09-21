@@ -26,7 +26,7 @@ export default function Home() {
             duration="0.4"
           >
             <SkillCard 
-              title="Project 1"
+              title="Skill 1"
               experience="Ervaren"
               useTime="3"
               link="/over-mij#skill-1"
@@ -38,7 +38,7 @@ export default function Home() {
             duration="0.4"
           >
              <SkillCard 
-              title="Project 1"
+              title="Skill 1"
               experience="Ervaren"
               useTime="3"
               link="/over-mij#skill-1"
@@ -51,7 +51,7 @@ export default function Home() {
             duration="0.4"
           >
              <SkillCard 
-              title="Project 1"
+              title="Skill 1"
               experience="Ervaren"
               useTime="3"
               link="/over-mij#skill-1"
@@ -64,7 +64,7 @@ export default function Home() {
             duration="0.4"
           >
              <SkillCard 
-              title="Project 1"
+              title="Skill 1"
               experience="Ervaren"
               useTime="3"
               link="/over-mij#skill-1"
@@ -119,6 +119,8 @@ export default function Home() {
           </SlideUpCardWhenVisible>
         </div>
       </div>
+    
+      {/* Reviews */}
     </div>
   );
 }
