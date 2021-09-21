@@ -9,7 +9,7 @@ export default function SkillCard() {
 
 
     return(
-			<div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
+			<div className="">
 				<article className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-70">
 					<a href="#" className="flex justify-center items-center mt-2 md:mt-4">
             <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/48/48/?random" />
