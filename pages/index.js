@@ -6,6 +6,7 @@ import HeroHome from "../components/hero/HeroHome";
 import {
   PopInWhenVisible,
   SlideUpCardWhenVisible,
+  SlideRightCardWhenVisible
 } from "../components/effects/DisplayWhenVisible";
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
 
 
       {/* Skills */}
-      <div id="skills" className="lg:h-screen">
+      <div id="skills">
         <br />
         <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Skills</h1>
 
@@ -123,7 +124,7 @@ export default function Home() {
       </div>
 
       {/* Projects */}
-      <div id="projects" className="lg:h-screen">
+      <div id="projects">
         <br />
         <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Projecten</h1>
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
@@ -181,38 +182,58 @@ export default function Home() {
       <div id="reviews">
         <br />
         <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Reviews</h1>
-      </div>
-      <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
-        <div className="flex flex-wrap -mx-1 lg:-mx-4">
-          <ReviewCard 
-            image="https://picsum.photos/96/96/?random"
+        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
+            <div className="flex flex-wrap -mx-1 lg:-mx-4">
+              <SlideRightCardWhenVisible
+                  classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+                  delay="0.6"
+              >
+                <ReviewCard 
+                image="https://picsum.photos/96/96/?random"
 
-            quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
-            name="Developer Proj"
-            company="Software Engineer"
-           />
-            <ReviewCard 
-            image="https://picsum.photos/96/96/?random"
+                quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
+                name="Developer Proj"
+                company="Software Engineer"
+                />
+              </SlideRightCardWhenVisible>
+              <SlideRightCardWhenVisible
+                  classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+                  delay="0.4"
+              >
+                <ReviewCard 
+                image="https://picsum.photos/96/96/?random"
 
-            quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
-            name="Developer Proj"
-            company="Software Engineer"
-           />
-            <ReviewCard 
-            image="https://picsum.photos/96/96/?random"
+                quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
+                name="Developer Proj"
+                company="Software Engineer"
+                />
+              </SlideRightCardWhenVisible>
+              <SlideRightCardWhenVisible
+                  classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+                  delay="0.2"
+              >
+                <ReviewCard 
+                image="https://picsum.photos/96/96/?random"
 
-            quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
-            name="Developer Proj"
-            company="Software Engineer"
-           />
-            <ReviewCard 
-            image="https://picsum.photos/96/96/?random"
+                quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
+                name="Developer Proj"
+                company="Software Engineer"
+                />
+              </SlideRightCardWhenVisible>
+              <SlideRightCardWhenVisible
+                  classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+                  delay="0.0"
+              >
+                <ReviewCard 
+                image="https://picsum.photos/96/96/?random"
 
-            quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
-            name="Developer Proj"
-            company="Software Engineer"
-           />
-        </div>
+                quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
+                name="Developer Proj"
+                company="Software Engineer"
+                />
+              </SlideRightCardWhenVisible>
+            </div>
+          </div>
       </div>
     </div>
   );
