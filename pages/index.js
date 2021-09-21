@@ -16,8 +16,11 @@ export default function Home() {
 
 
       {/* Skills */}
-
-      <div className="container my-12 mx-auto px-4 md:px-12">
+      <div id="skills">
+        <br />
+        <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Skills</h1>
+      </div>
+      <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
         <div className="flex flex-wrap -mx-1 lg:-mx-4">
           <PopInWhenVisible
             classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
@@ -73,7 +76,11 @@ export default function Home() {
       </div>
 
       {/* Projects */}
-      <div className="container my-12 mx-auto px-4 md:px-12">
+      <div id="projects">
+        <br />
+        <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Projecten</h1>
+      </div>
+      <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
         <div className="flex flex-wrap -mx-1 lg:-mx-4">
           <SlideUpCardWhenVisible
             classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
@@ -120,7 +127,11 @@ export default function Home() {
       </div>
     
       {/* Reviews */}
-      <div className="container my-12 mx-auto px-4 md:px-12">
+      <div id="reviews">
+        <br />
+        <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Reviews</h1>
+      </div>
+      <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
         <div className="flex flex-wrap -mx-1 lg:-mx-4">
           <ReviewCard 
             image="https://picsum.photos/96/96/?random"
