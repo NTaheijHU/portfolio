@@ -16,116 +16,167 @@ export default function Home() {
 
 
       {/* Skills */}
-      <div id="skills">
+      <div id="skills" className="lg:h-screen">
         <br />
         <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Skills</h1>
-      </div>
-      <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
-        <div className="flex flex-wrap -mx-1 lg:-mx-4">
-          <PopInWhenVisible
-            classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
-            delay="0.0"
-            duration="0.4"
-          >
-            <SkillCard 
-              title="Skill 1"
-              experience="Ervaren"
-              useTime="3"
-              link="/over-mij#skill-1"
-            />
-          </PopInWhenVisible> 
-          <PopInWhenVisible
-            classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
-            delay="0.2"
-            duration="0.4"
-          >
-             <SkillCard 
-              title="Skill 1"
-              experience="Ervaren"
-              useTime="3"
-              link="/over-mij#skill-1"
-            />
-          </PopInWhenVisible> 
 
-          <PopInWhenVisible
-            classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
-            delay="0.4"
-            duration="0.4"
-          >
-             <SkillCard 
-              title="Skill 1"
-              experience="Ervaren"
-              useTime="3"
-              link="/over-mij#skill-1"
-            />
-          </PopInWhenVisible> 
-
-          <PopInWhenVisible
-            classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
-            delay="0.6"
-            duration="0.4"
-          >
-             <SkillCard 
-              title="Skill 1"
-              experience="Ervaren"
-              useTime="3"
-              link="/over-mij#skill-1"
-            />
-          </PopInWhenVisible> 
+        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
+          <div className="flex flex-wrap -mx-1 lg:-mx-4">
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+              delay="0.0"
+              duration="0.4"
+            >
+              <SkillCard 
+                title="Skill 1"
+                experience="Ervaren"
+                useTime="3"
+                link="/over-mij#skill-1"
+              />
+            </PopInWhenVisible> 
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+              delay="0.2"
+              duration="0.4"
+            >
+              <SkillCard 
+                title="Skill 1"
+                experience="Ervaren"
+                useTime="3"
+                link="/over-mij#skill-1"
+              />
+            </PopInWhenVisible> 
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+              delay="0.4"
+              duration="0.4"
+            >
+              <SkillCard 
+                title="Skill 1"
+                experience="Ervaren"
+                useTime="3"
+                link="/over-mij#skill-1"
+              />
+            </PopInWhenVisible> 
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+              delay="0.6"
+              duration="0.4"
+            >
+              <SkillCard 
+                title="Skill 1"
+                experience="Ervaren"
+                useTime="3"
+                link="/over-mij#skill-1"
+              />
+            </PopInWhenVisible> 
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+              delay="0.4"
+              duration="0.4"
+            >
+              <SkillCard 
+                title="Skill 1"
+                experience="Ervaren"
+                useTime="3"
+                link="/over-mij#skill-1"
+              />
+            </PopInWhenVisible> 
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+              delay="0.6"
+              duration="0.4"
+            >
+              <SkillCard 
+                title="Skill 1"
+                experience="Ervaren"
+                useTime="3"
+                link="/over-mij#skill-1"
+              />
+            </PopInWhenVisible> 
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+              delay="0.8"
+              duration="0.4"
+            >
+              <SkillCard 
+                title="Skill 1"
+                experience="Ervaren"
+                useTime="3"
+                link="/over-mij#skill-1"
+              />
+            </PopInWhenVisible> 
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
+              delay="1.0"
+              duration="0.4"
+            >
+              <SkillCard 
+                title="Skill 1"
+                experience="Ervaren"
+                useTime="3"
+                link="/over-mij#skill-1"
+              />
+            </PopInWhenVisible> 
+          </div>
         </div>
       </div>
 
       {/* Projects */}
-      <div id="projects">
+      <div id="projects" className="lg:h-screen">
         <br />
         <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Projecten</h1>
-      </div>
-      <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
-        <div className="flex flex-wrap -mx-1 lg:-mx-4">
-          <SlideUpCardWhenVisible
-            classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
-            delay="0.0"
-          >
-           <ProjectCard 
-            image="https://picsum.photos/600/400/?random"
-            title="Project 1"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis.&nbsp;"
-            link="/projects/1"
-            githubLink="https://github.com/ntaheij/project1"
-            websiteLink="https://ntaheij.github.io/project1"
-           />
-          </SlideUpCardWhenVisible>
+        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
+          <div className="flex flex-wrap -mx-1 lg:-mx-4">
+            <SlideUpCardWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
+              delay="0.0"
+            >
+            <ProjectCard 
+              image="https://picsum.photos/600/400/?random"
+              title="Project 1"
+              text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis.&nbsp;"
+              link="/projects/1"
+              githubLink="https://github.com/ntaheij/project1"
+              websiteLink="https://ntaheij.github.io/project1"
+            />
+            </SlideUpCardWhenVisible>
 
-          <SlideUpCardWhenVisible
-            classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
-            delay="0.2"
-          >
-           <ProjectCard 
-            image="https://picsum.photos/600/400/?random"
-            title="Project 1"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis.&nbsp;"
-            link="/projects/1"
-            githubLink="https://github.com/ntaheij/project1"
-            websiteLink="https://ntaheij.github.io/project1"
-           />
-          </SlideUpCardWhenVisible>
+            <SlideUpCardWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
+              delay="0.2"
+            >
+            <ProjectCard 
+              image="https://picsum.photos/600/400/?random"
+              title="Project 1"
+              text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis.&nbsp;"
+              link="/projects/1"
+              githubLink="https://github.com/ntaheij/project1"
+              websiteLink="https://ntaheij.github.io/project1"
+            />
+            </SlideUpCardWhenVisible>
 
-          <SlideUpCardWhenVisible
-            classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
-            delay="0.4"
-          >
-           <ProjectCard 
-            image="https://picsum.photos/600/400/?random"
-            title="Project 1"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis.&nbsp;"
-            link="/projects/1"
-            githubLink="https://github.com/ntaheij/project1"
-            websiteLink="https://ntaheij.github.io/project1"
-           />
-          </SlideUpCardWhenVisible>
+            <SlideUpCardWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
+              delay="0.4"
+            >
+            <ProjectCard 
+              image="https://picsum.photos/600/400/?random"
+              title="Project 1"
+              text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis.&nbsp;"
+              link="/projects/1"
+              githubLink="https://github.com/ntaheij/project1"
+              websiteLink="https://ntaheij.github.io/project1"
+            />
+            </SlideUpCardWhenVisible>
+          </div>
+        </div>
+        <div className="grid justify-items-center">
+          <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-6 px-6 rounded-lg">
+            Bekijk meer projecten
+          </button>
         </div>
       </div>
-    
       {/* Reviews */}
       <div id="reviews">
         <br />
