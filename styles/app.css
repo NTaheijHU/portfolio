@@ -32,6 +32,10 @@ body {
   fill: #fff;
 }
 
+.color-pink {
+  color: #db2777;
+}
+
 @media (max-width: 639px) {
   .footer-panel:not(:first-child) {
     margin-top: 1rem;
