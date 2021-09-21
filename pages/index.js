@@ -8,13 +8,19 @@ import {
   SlideUpCardWhenVisible,
   SlideRightCardWhenVisible
 } from "../components/effects/DisplayWhenVisible";
+import InfoCard from "../components/cards/InfoCard";
 
 export default function Home() {
   return (
     <div>
       <HeroHome />
       {/* About Me */}
-
+      <div id="about-me">
+        <br />
+        <div className="container mb-12 mt-16 md:mt-20 mx-auto px-4 md:px-12">
+            <InfoCard />
+        </div>
+      </div>
 
       {/* Skills */}
       <div id="skills">
