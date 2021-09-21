@@ -64,7 +64,7 @@ export default function Navigation() {
       <nav className="bg-white shadow-sm py-6 text-gray-700">
         <div className="flex justify-between max-w-7xl mx-auto xl:px-0 px-4">
           <div className="order-last md:order-first flex items-center">
-            <a href="/" role="button" aria-label="Home">
+            <a href="/#" role="button" aria-label="Home">
               <h1 className="text-gray-900 text-3xl font-bold">NOAH TAHEIJ</h1>
             </a>
           </div>

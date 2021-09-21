@@ -27,7 +27,7 @@ export default function HeroHome() {
     <section className="bg-white custom-hero-image" style={{backgroundImage: `url("header.jpg")`}}>
       <div className="custom-hero h-screen">
         <div className="max-w-full mx-auto xl:px-0 px-4 text-white font-semibold" style={styles.hero}>
-          <div className="w-full my-8 lg:my-64 text-center">
+          <div className="w-full my-16 lg:my-32 text-center">
             <motion.div             
               initial={animateDown}
               animate={{ y: "0%", opacity: 1 }}
@@ -48,7 +48,7 @@ export default function HeroHome() {
               animate={{ opacity: 1 }}
               transition={{ delay: 2.6, duration: 0.8 }}
             >
-              <div className="grid justify-items-center lg:my-96" role="img" aria-label="Pijl voor scrollen">
+              <div className="grid justify-items-center lg:my-64" role="img" aria-label="Pijl voor scrollen">
                 <a href="#skills">
                   <img src="arrow.svg" alt="Down Arrow" width="120" height="120" className="hero-arrow bounce" />
                 </a>
