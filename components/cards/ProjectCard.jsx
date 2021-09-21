@@ -1,10 +1,10 @@
 import {useReducedMotion, motion} from "framer-motion";
 
-export default function ProjectCard() {
+export default function ProjectCard(props) {
 
-    const shouldReduceMotion = useReducedMotion();
+  const shouldReduceMotion = useReducedMotion();
 
-    let animateHeart = shouldReduceMotion ? { scale: 1, color: '#db2777', origin: 0 } : { scale: 1.2, color: '#db2777', origin: 0 };
+  	let animateHeart = shouldReduceMotion ? { scale: 1, color: '#db2777', origin: 0 } : { scale: 1.2, color: '#db2777', origin: 0 };
 	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', origin: 0 } : { scale: 1.2, color: '#1d4ed8', origin: 0 };
 
 
@@ -12,13 +12,13 @@ export default function ProjectCard() {
 			<div className="">
 				<article className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-70">
 					<a href="#">
-						<img alt="Placeholder" className="block h-auto w-full" src="https://picsum.photos/600/400/?random" />
+						<img alt="Placeholder" className="block h-auto w-full" src={props.image} />
 					</a>
 
 					<header className="p-2 md:p-4">
 						<a className="no-underline text-black" href="#">
 							<h1 className="text-4xl font-bold text-center">
-									Project Naam
+									{props.title}
 							</h1>
 						</a>
 					</header>
@@ -26,12 +26,10 @@ export default function ProjectCard() {
 					<section className="flex px-2 pb-4 md:px-4 md:pb-4">
 						<a className="no-underline text-black" href="#">
 							<p className="text-md">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis.&nbsp;
-									<a className="no-underline hover:underline text-blue-700">
+									{props.text}
+									<a className="no-underline hover:underline text-blue-700" href={props.link}>
 										Lees meer...
 									</a>
-							</p>
-							<p>
 							</p>
 						</a>
 					</section>
@@ -46,16 +44,16 @@ export default function ProjectCard() {
 								className="fa fa-heart fa-2x"></motion.i>
 							</a>
 
-							<a className="no-underline text-grey-darker mr-2" href="#">
-								<span className="hidden">Like</span>
+							<a className="no-underline text-grey-darker mr-2" href={props.githubLink}>
+								<span className="hidden">Github</span>
 								<motion.i
 								whileHover= { animateIcon }
 								whileFocus= { animateIcon }
 								className="fab fa-github fa-2x"></motion.i>
 							</a>
 
-							<a className="no-underline text-grey-darker mr-2" href="#">
-								<span className="hidden">Like</span>
+							<a className="no-underline text-grey-darker mr-2" href={props.websiteLink}>
+								<span className="hidden">Website</span>
 								<motion.i
 								whileHover= { animateIcon }
 								whileFocus= { animateIcon }
