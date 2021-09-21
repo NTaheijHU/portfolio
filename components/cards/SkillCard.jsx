@@ -1,8 +1,4 @@
-import {useReducedMotion, motion} from "framer-motion";
-
 export default function SkillCard(props) {
-
-  const shouldReduceMotion = useReducedMotion();
     return(
 			<div className="">
 				<article className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-70">

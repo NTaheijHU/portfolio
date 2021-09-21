@@ -5,12 +5,18 @@
 /.pnp
 .pnp.js
 .next
+.vscode
 
 # testing
 /coverage
 
 # production
 /build
+/out
+
+#Prettier
+.eslinctrc
+.prettierrc
 
 # misc
 .DS_Store
