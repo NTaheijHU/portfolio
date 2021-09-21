@@ -32,7 +32,7 @@ function PopInWhenVisible(props) {
       >
         {props.children}
       </motion.div>
-      <div ref={ref} className="invisible mt-96"></div>
+      <div ref={ref} className={props.top ? "invisible mt-" + props.top : "invisible mt-96"}></div>
     </>
   );
 }

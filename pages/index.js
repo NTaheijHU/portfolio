@@ -178,11 +178,16 @@ export default function Home() {
             </SlideUpCardWhenVisible>
           </div>
         </div>
-        <div className="grid justify-items-center">
+        <PopInWhenVisible
+              classes="grid justify-items-center"
+              delay="0.9"
+              duration="0.4"
+              top="0"
+        >
           <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-6 px-6 rounded-lg">
             Bekijk meer projecten
           </button>
-        </div>
+        </PopInWhenVisible>
       </div>
       {/* Reviews */}
       <div id="reviews">
