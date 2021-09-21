@@ -1,5 +1,6 @@
 import ProjectCard from "../components/cards/ProjectCard";
 import SkillCard from "../components/cards/SkillCard";
+import ReviewCard from "../components/cards/ReviewCard";
 import HeroHome from "../components/hero/HeroHome";
 
 import {
@@ -11,13 +12,11 @@ export default function Home() {
   return (
     <div>
       <HeroHome />
-      <div id="skills">
-        <br />
-      </div>
       {/* About Me */}
 
 
       {/* Skills */}
+
       <div className="container my-12 mx-auto px-4 md:px-12">
         <div className="flex flex-wrap -mx-1 lg:-mx-4">
           <PopInWhenVisible
@@ -121,6 +120,38 @@ export default function Home() {
       </div>
     
       {/* Reviews */}
+      <div className="container my-12 mx-auto px-4 md:px-12">
+        <div className="flex flex-wrap -mx-1 lg:-mx-4">
+          <ReviewCard 
+            image="https://picsum.photos/96/96/?random"
+
+            quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
+            name="Developer Proj"
+            company="Software Engineer"
+           />
+            <ReviewCard 
+            image="https://picsum.photos/96/96/?random"
+
+            quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
+            name="Developer Proj"
+            company="Software Engineer"
+           />
+            <ReviewCard 
+            image="https://picsum.photos/96/96/?random"
+
+            quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
+            name="Developer Proj"
+            company="Software Engineer"
+           />
+            <ReviewCard 
+            image="https://picsum.photos/96/96/?random"
+
+            quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
+            name="Developer Proj"
+            company="Software Engineer"
+           />
+        </div>
+      </div>
     </div>
   );
 }
