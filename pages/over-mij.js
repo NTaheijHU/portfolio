@@ -1,4 +1,5 @@
 import ImageCard from "../components/cards/ImageCard";
+import SkillCard from "../components/cards/about/SkillCard";
 import Hero from "../components/hero/Hero";
 
 import {useReducedMotion, motion} from "framer-motion";
@@ -11,7 +12,7 @@ export default function OverMij() {
   
   const shouldReduceMotion = useReducedMotion();
 
- 	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', origin: 0 } : { scale: 1.2, color: '#1d4ed8', origin: 0 };
+ 	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', originX: 0 } : { scale: 1.2, color: '#1d4ed8', originX: 0, originY: 0 };
 
   return (
     <div>
@@ -31,17 +32,72 @@ export default function OverMij() {
               Aperiam odit, eveniet amet enim assumenda unde sint accusamus? Qui quia quas natus tenetur amet. Quis veniam sequi at, hic et quisquam quod soluta vitae? Autem laboriosam illum cum error."
               image="https://picsum.photos/512/256/?random"
             >
-              <div className="flex leading-tight p-2 md:p-4 ">
-                <a className="no-underline text-grey-darker mr-2" href="#">
+              <motion.div className="flex leading-tight p-2 md:p-4"
+              whileHover= { animateIcon }
+              whileFocus= { animateIcon }
+              >
+                <a className="no-underline" href="#">
                   <span className="hidden">Download CV</span>
-                  <motion.i
-                  whileHover= { animateIcon }
-                  whileFocus= { animateIcon }
-                  className="fa fa-download fa-2x"></motion.i>
+                  <i className="fa fa-download fa-2x mr-2" />
+                  <span className="text-center text-xl text-grey-darker my-1">Download CV</span>
                 </a>
-                <p className="text-center text-xl font-medium text-grey-darker my-1">Download CV</p>
-              </div>
+
+              </motion.div>
             </ImageCard>
+        </div>
+      </div>
+
+      {/* Skills */}
+      <div id="skills">
+        <br />
+        <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Skills</h1>
+
+        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
+          <div className="flex flex-wrap -mx-1 lg:-mx-4">
+            <SkillCard 
+                title="Skill 1"
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                useTime="3"
+                link="/projects?filter=js"
+              /> 
+              <SkillCard 
+                title="Skill 1"
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                useTime="3"
+              /> 
+              <SkillCard 
+                title="Skill 1"
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                useTime="3"
+              />
+              <SkillCard 
+                title="Skill 1"
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                useTime="3"
+              />
+              <SkillCard 
+                title="Skill 1"
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                useTime="3"
+              />
+              <SkillCard 
+                title="Skill 1"
+                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                useTime="3"
+              />
+          </div>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ export default function ProjectCard(props) {
         </a>
 
         <header className="p-2 md:p-4">
-          <a className="no-underline text-black" href="#">
+          <a className="no-underline text-black" href={props.link}>
             <h1 className="text-4xl font-bold text-center">
                 {props.title}
             </h1>

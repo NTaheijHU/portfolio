@@ -7,7 +7,7 @@ export default function SkillCard(props) {
 					</a>
 
 					<header className="p-2 md:p-4">
-						<a className="no-underline text-black" href="#">
+						<a className="no-underline text-black" href={props.link}>
 							<h1 className="text-4xl font-bold text-center">
 									{props.title}
 							</h1>
@@ -15,7 +15,7 @@ export default function SkillCard(props) {
 					</header>
 
 					<section className="pb-2 md:pb-4">
-						<div className="no-underline text-black text-center" href="#">
+						<div className="no-underline text-black text-center">
 							<p className="text-2xl">
 								Ervaring: {props.experience}
 							</p>
