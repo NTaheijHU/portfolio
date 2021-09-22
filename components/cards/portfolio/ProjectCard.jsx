@@ -26,7 +26,7 @@ export default function ProjectCard(props) {
                       <motion.i
                       whileHover= { animateHeart }
                       whileFocus= { animateHeart }
-                      className="fa fa-heart fa-2x"></motion.i>
+                      className="fa fa-heart fa-2x" />
                     </a>
     
                     <a className="no-underline text-grey-darker mr-2" href={props.githubLink}>
@@ -34,7 +34,7 @@ export default function ProjectCard(props) {
                       <motion.i
                       whileHover= { animateIcon }
                       whileFocus= { animateIcon }
-                      className="fab fa-github fa-2x"></motion.i>
+                      className="fab fa-github fa-2x" />
                     </a>
     
                     <a className="no-underline text-grey-darker mr-2" href={props.websiteLink}>
@@ -42,7 +42,17 @@ export default function ProjectCard(props) {
                       <motion.i
                       whileHover= { animateIcon }
                       whileFocus= { animateIcon }
-                      className="far fa-window-maximize fa-2x"></motion.i>
+                      className="far fa-window-maximize fa-2x" />
+                    </a>
+
+                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
+                      REACT
+                    </a>
+                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
+                      TAILWINDCSS
+                    </a>
+                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
+                      PYTHON
                     </a>
                   </div>
                 </section>
@@ -82,6 +92,16 @@ export default function ProjectCard(props) {
                       whileHover= { animateIcon }
                       whileFocus= { animateIcon }
                       className="far fa-window-maximize fa-2x"></motion.i>
+                    </a>
+
+                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
+                      REACT
+                    </a>
+                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
+                      TAILWINDCSS
+                    </a>
+                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
+                      PYTHON
                     </a>
                   </div>
                 </section>

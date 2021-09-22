@@ -55,14 +55,29 @@ export default function Portfolio() {
     
       {/* Projects */}
       <div id="projects">
-        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
-          <ProjectCard 
+        <div className="container mb-2 mt-4 md:mt-8 mx-auto px-4 md:px-12">
+          <a className="ml-2 bg-gray-600 hover:bg-gray-600 text-gray-200 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out">
+            REACT
+          </a>
+          <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out">
+            TAILWINDCSS
+          </a>
+          <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out">
+            PYTHON
+          </a>
+          <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-centertext-md py-3 px-8 rounded-xl duration-200 ease-in-out">
+            JAVA
+          </a>
+        </div>
+        <div className="container mb-12 mx-auto px-4 md:px-12">
+          <ProjectCard
               image="https://picsum.photos/600/400/?random"
               title="Project 1"
               mirrored={true}
               text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
               githubLink="https://github.com/ntaheij/project1"
               websiteLink="https://ntaheij.github.io/project1"
+              
           />
           <ProjectCard 
               image="https://picsum.photos/600/400/?random"
