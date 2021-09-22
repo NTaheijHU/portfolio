@@ -1,7 +1,6 @@
 import {useReducedMotion, motion} from "framer-motion";
 
 export default function ProjectCard(props) {
-
   const shouldReduceMotion = useReducedMotion();
 
   let animateHeart = shouldReduceMotion ? { scale: 1, color: '#db2777', origin: 0 } : { scale: 1.2, color: '#db2777', origin: 0 };
@@ -13,7 +12,6 @@ export default function ProjectCard(props) {
         <a href="#">
           <img alt="Placeholder" className="block h-auto w-full" src={props.image} />
         </a>
-
         <header className="p-2 md:p-4 mt-2 md:mt-4">
           <a className="no-underline text-black" href={props.link}>
             <h1 className="text-4xl font-bold text-center">
@@ -21,7 +19,6 @@ export default function ProjectCard(props) {
             </h1>
           </a>
         </header>
-
         <section className="flex px-2 pb-4 md:px-4 md:pb-4">
           <div className="no-underline text-black" href="#">
             <p className="text-md">
@@ -32,7 +29,6 @@ export default function ProjectCard(props) {
             </p>
           </div>
         </section>
-
         <section>
           <div className="flex leading-tight p-2 md:p-4 ">
             <a className="no-underline text-grey-darker mr-2" href="#">

@@ -1,13 +1,11 @@
 import {useReducedMotion, motion} from "framer-motion";
 
 export default function ProjectCard(props) {
-
   const shouldReduceMotion = useReducedMotion();
 
   let animateHeart = shouldReduceMotion ? { scale: 1, color: '#db2777', origin: 0 } : { scale: 1.2, color: '#db2777', origin: 0 };
 	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', origin: 0 } : { scale: 1.2, color: '#1d4ed8', origin: 0 };
-  
-  
+   
   if(!props.mirrored) {
     return(
       <article>
@@ -44,7 +42,7 @@ export default function ProjectCard(props) {
                       whileFocus= { animateIcon }
                       className="far fa-window-maximize fa-2x" />
                     </a>
-
+                    
                     <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
                       REACT
                     </a>

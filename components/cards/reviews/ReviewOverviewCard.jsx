@@ -1,7 +1,6 @@
 import {useReducedMotion, motion} from "framer-motion";
 
 function ReviewOverviewCard(props) {
-
   return ( 
     <div>
       <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 mt-2 md:mt-4">

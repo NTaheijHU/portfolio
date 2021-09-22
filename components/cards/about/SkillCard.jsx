@@ -9,7 +9,6 @@ function SkillCard(props) {
             </h1>
           </a>
         </header>
-
         <section className="pb-2 md:pb-4 px-2">
           <div className="no-underline text-black text-center">
             <p className="text-xl">
