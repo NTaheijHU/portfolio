@@ -67,7 +67,7 @@ export default function OverMij() {
                   Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
                   Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
                   useTime="3"
-                  link="/projects?filter=js"
+                  link="/portfolio?filter=js"
                 /> 
             </PopInWhenVisible>
             <PopInWhenVisible
@@ -81,7 +81,7 @@ export default function OverMij() {
                   Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
                   Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
                   useTime="3"
-                  link="/projects?filter=js"
+                  link="/portfolio?filter=js"
                 /> 
             </PopInWhenVisible>
             <PopInWhenVisible
@@ -95,7 +95,7 @@ export default function OverMij() {
                   Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
                   Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
                   useTime="3"
-                  link="/projects?filter=js"
+                  link="/portfolio?filter=js"
                 /> 
             </PopInWhenVisible>
             <PopInWhenVisible
@@ -109,7 +109,7 @@ export default function OverMij() {
                   Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
                   Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
                   useTime="3"
-                  link="/projects?filter=js"
+                  link="/portfolio?filter=js"
                 /> 
             </PopInWhenVisible>
             <PopInWhenVisible
@@ -123,7 +123,7 @@ export default function OverMij() {
                   Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
                   Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
                   useTime="3"
-                  link="/projects?filter=js"
+                  link="/portfolio?filter=js"
                 /> 
             </PopInWhenVisible>
             <PopInWhenVisible
@@ -137,7 +137,7 @@ export default function OverMij() {
                   Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
                   Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
                   useTime="3"
-                  link="/projects?filter=js"
+                  link="/portfolio?filter=js"
                 /> 
             </PopInWhenVisible>
           </div>
