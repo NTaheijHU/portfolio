@@ -9,7 +9,7 @@ export default function ProjectCard(props) {
 
   return(
     <div className="">
-      <article className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-70">
+      <article className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90">
         <a href="#">
           <img alt="Placeholder" className="block h-auto w-full" src={props.image} />
         </a>

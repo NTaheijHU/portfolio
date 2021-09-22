@@ -11,7 +11,7 @@ export default function ProjectCard(props) {
   if(!props.mirrored) {
     return(
       <article>
-        <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-70 mt-2 md:mt-4">
+        <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 mt-2 md:mt-4">
           <div className="lg:relative m-0 lg:grid lg:grid-cols-3">
             <div className="p-6 lg:col-span-2">
                 <h2 className="uppercase font-medium text-4xl mb-3">{props.title}</h2>
