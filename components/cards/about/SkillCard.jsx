@@ -12,7 +12,7 @@ function SkillCard(props) {
 
         <section className="pb-2 md:pb-4 px-2">
           <div className="no-underline text-black text-center">
-            <p className="text-2xl">
+            <p className="text-xl">
               {props.text}
             </p>
             <p className="text-2xl pt-2">
