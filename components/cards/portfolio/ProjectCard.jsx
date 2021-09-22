@@ -64,7 +64,7 @@ export default function ProjectCard(props) {
   } else {
     return(
       <article>
-        <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-70 mt-2 md:mt-4">
+        <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 mt-2 md:mt-4">
           <div className="lg:relative m-0 lg:grid lg:grid-cols-3 lg:grid-rows-1">
             <div className="lg:my-4 lg:mx-4">
               <img alt="Placeholder" src={props.image} />
