@@ -4,6 +4,10 @@ import Hero from "../components/hero/Hero";
 
 import {useReducedMotion, motion} from "framer-motion";
 
+import {
+  PopInWhenVisible
+} from "../components/effects/DisplayWhenVisible";
+
 
 export default function OverMij() {
   const hero = {
@@ -52,49 +56,90 @@ export default function OverMij() {
 
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-12">
           <div className="flex flex-wrap -mx-1 lg:-mx-4">
-            <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-                link="/projects?filter=js"
-              /> 
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2"
+              delay="0.0"
+              duration="0.4"
+            >
               <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-              /> 
+                  title="Skill 1"
+                  text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                  Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                  Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                  useTime="3"
+                  link="/projects?filter=js"
+                /> 
+            </PopInWhenVisible>
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2"
+              delay="0.2"
+              duration="0.4"
+            >
               <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-              />
+                  title="Skill 1"
+                  text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                  Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                  Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                  useTime="3"
+                  link="/projects?filter=js"
+                /> 
+            </PopInWhenVisible>
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2"
+              delay="0.4"
+              duration="0.4"
+            >
               <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-              />
+                  title="Skill 1"
+                  text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                  Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                  Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                  useTime="3"
+                  link="/projects?filter=js"
+                /> 
+            </PopInWhenVisible>
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2"
+              delay="0.6"
+              duration="0.4"
+            >
               <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-              />
+                  title="Skill 1"
+                  text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                  Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                  Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                  useTime="3"
+                  link="/projects?filter=js"
+                /> 
+            </PopInWhenVisible>
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2"
+              delay="0.8"
+              duration="0.4"
+            >
               <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-              />
+                  title="Skill 1"
+                  text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                  Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                  Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                  useTime="3"
+                  link="/projects?filter=js"
+                /> 
+            </PopInWhenVisible>
+            <PopInWhenVisible
+              classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2"
+              delay="1.0"
+              duration="0.4"
+            >
+              <SkillCard 
+                  title="Skill 1"
+                  text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
+                  Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
+                  Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
+                  useTime="3"
+                  link="/projects?filter=js"
+                /> 
+            </PopInWhenVisible>
           </div>
         </div>
       </div>
