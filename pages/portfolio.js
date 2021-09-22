@@ -56,18 +56,20 @@ export default function Portfolio() {
       {/* Projects */}
       <div id="projects">
         <div className="container mb-2 mt-4 md:mt-8 mx-auto px-2 md:px-0">
-          <a className="ml-2 bg-gray-600 hover:bg-gray-600 text-gray-200 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out">
-            REACT
-          </a>
-          <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out">
-            TAILWINDCSS
-          </a>
-          <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out">
-            PYTHON
-          </a>
-          <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-centertext-md py-3 px-8 rounded-xl duration-200 ease-in-out">
-            JAVA
-          </a>
+          <div className="grid grid-cols-2 md:grid-cols-8">
+            <a className="ml-2 mt-2 bg-gray-600 hover:bg-gray-600 text-gray-200 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out">
+              REACT
+            </a>
+            <a className="ml-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out">
+              TAILWINDCSS
+            </a>
+            <a className="ml-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out">
+              PYTHON
+            </a>
+            <a className="ml-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out">
+              JAVA
+            </a>
+          </div>
         </div>
         <div className="container mb-12 mx-auto px-2 md:px-0">
           <ProjectCard

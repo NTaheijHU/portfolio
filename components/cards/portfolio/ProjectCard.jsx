@@ -15,8 +15,8 @@ export default function ProjectCard(props) {
                 <h2 className="uppercase font-medium text-4xl mb-3">{props.title}</h2>
                 <p className="leading-normal text-xl">{props.text}</p>
             </div>
-            <div className="lg:my-4 lg:mx-4 lg:col-span-1">
-              <img alt="Placeholder" src={props.image} />
+              <div className="lg:my-4 lg:mx-4 lg:col-span-1">
+                <img alt="Placeholder" src={props.image} />
                 <section>
                   <div className="flex leading-tight p-2 md:p-4 ">
                     <a className="no-underline text-grey-darker mr-2" href="#">
@@ -49,12 +49,9 @@ export default function ProjectCard(props) {
                     <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
                       TAILWINDCSS
                     </a>
-                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
-                      PYTHON
-                    </a>
                   </div>
                 </section>
-            </div>
+              </div>
           </div>
         </section>
       </article>  
@@ -97,9 +94,6 @@ export default function ProjectCard(props) {
                     </a>
                     <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
                       TAILWINDCSS
-                    </a>
-                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
-                      PYTHON
                     </a>
                   </div>
                 </section>
