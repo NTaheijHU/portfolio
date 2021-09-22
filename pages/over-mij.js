@@ -1,6 +1,6 @@
-import ImageCard from "../components/cards/ImageCard";
 import SkillCard from "../components/cards/about/SkillCard";
 import Hero from "../components/hero/Hero";
+import ImageCard from "../components/cards/ImageCard";
 
 import {useReducedMotion, motion} from "framer-motion";
 
@@ -16,7 +16,7 @@ export default function OverMij() {
   
   const shouldReduceMotion = useReducedMotion();
 
- 	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', originX: 0 } : { scale: 1.2, color: '#1d4ed8', originX: 0, originY: 0 };
+ 	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', origin: 0 } : { scale: 1.2, color: '#1d4ed8', origin: 0 };
 
   return (
     <div>
