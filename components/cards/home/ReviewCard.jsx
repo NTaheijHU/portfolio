@@ -1,7 +1,7 @@
 export default function ReviewCard(props) {
     return(
 			<div className="">
-				<section className= "pt-4 bg-white rounded-xl shadow mx-auto my-10">
+				<section className= "pt-4 bg-white rounded-xl shadow mx-auto my-10 mt-2 md:mt-4">
 					<blockquote className="m-2 lg:m-4">
 						<p className= "font-semibold"> "{props.quote}" </p>
 					</blockquote>

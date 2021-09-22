@@ -2,7 +2,7 @@ export default function InfoCard() {
   return(
     <div className="">
       <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-70">
-        <div className="lg:relative m-0 lg:flex">
+        <div className="lg:relative m-0 lg:flex mt-2 md:mt-4">
           <img alt="Placeholder" className="block w-full h-1/3 lg:w-1/3 lg:h-full" src="https://picsum.photos/512/256/?random" />
           <div className="p-6">
             <h3 className="uppercase font-medium text-4xl mb-3">Noah Taheij</h3>

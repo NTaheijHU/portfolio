@@ -14,7 +14,7 @@ export default function ProjectCard(props) {
           <img alt="Placeholder" className="block h-auto w-full" src={props.image} />
         </a>
 
-        <header className="p-2 md:p-4">
+        <header className="p-2 md:p-4 mt-2 md:mt-4">
           <a className="no-underline text-black" href={props.link}>
             <h1 className="text-4xl font-bold text-center">
                 {props.title}
