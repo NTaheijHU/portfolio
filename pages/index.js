@@ -1,6 +1,7 @@
-import ProjectCard from "../components/cards/ProjectCard";
-import SkillCard from "../components/cards/SkillCard";
-import ReviewCard from "../components/cards/ReviewCard";
+import ProjectCard from "../components/cards/home/ProjectCard";
+import SkillCard from "../components/cards/home/SkillCard";
+import ReviewCard from "../components/cards/home/ReviewCard";
+import InfoCard from "../components/cards/home/InfoCard";
 import HeroHome from "../components/hero/HeroHome";
 
 import {
@@ -8,7 +9,6 @@ import {
   SlideUpCardWhenVisible,
   SlideRightCardWhenVisible
 } from "../components/effects/DisplayWhenVisible";
-import InfoCard from "../components/cards/InfoCard";
 
 export default function Home() {
   return (
