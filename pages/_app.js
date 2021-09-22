@@ -5,7 +5,6 @@ import "tailwindcss/utilities.css";
 import "tailwindcss/screens.css";
 import "../styles/app.css";
 import "../styles/arrow.css";
-import "../styles/scrollbar.css";
 import Head from "next/head";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
