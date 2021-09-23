@@ -13,14 +13,14 @@ export default function Reviews() {
       <Hero hero={hero} />
         {/* Review Overview */}
         <div id="review-overview">
-        <br />
-        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-0">
-            <ReviewOverviewCard
-              title="Klanten Reviews (31)"          
-            >  
-            </ReviewOverviewCard>
+          <br />
+          <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-0">
+              <ReviewOverviewCard
+                title="Klanten Reviews (31)"          
+              >  
+              </ReviewOverviewCard>
+          </div>
         </div>
-      </div>
         
         {/* Reviews */}
         <div id="reviews">
