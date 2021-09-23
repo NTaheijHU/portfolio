@@ -1,6 +1,6 @@
 function SkillCard(props) {
   return ( 
-    <div className="">
+    <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/2">
       <article className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 mt-2 md:mt-4">
         <header className="p-2 md:p-4">
           <a className="no-underline text-black" href={props.link}>
