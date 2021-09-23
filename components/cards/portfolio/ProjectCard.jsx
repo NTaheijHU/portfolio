@@ -73,7 +73,7 @@ export default function ProjectCard(props) {
                       className="fa fa-heart fa-2x"></motion.i>
                     </a>
     
-                    <a className="no-underline text-grey-darker mr-2" href={props.githubLink}>
+                    <a className="no-underline text-grey-darker mr-2" href={props.githubLink} target="_blank">
                       <span className="hidden">Github</span>
                       <motion.i
                       whileHover= { animateIcon }
@@ -81,7 +81,7 @@ export default function ProjectCard(props) {
                       className="fab fa-github fa-2x"></motion.i>
                     </a>
     
-                    <a className="no-underline text-grey-darker mr-2" href={props.websiteLink}>
+                    <a className="no-underline text-grey-darker mr-2" href={props.websiteLink} target="_blank">
                       <span className="hidden">Website</span>
                       <motion.i
                       whileHover= { animateIcon }
