@@ -6,7 +6,7 @@ export default function LinkFooter() {
           <div className="w-full md:w-1/4 flex flex-col gap-4 footer-panel md:items-start items-center">
             <h2 className="sm:pb-4 text-3xl">Noah Taheij</h2>
             <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="tel:+31850150016">+31 (0)85 015 0016</a>
-            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="mailto:info@lokalized.nl">info@ntaheij.dev</a>
+            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="mailto:info@ntaheij.dev">info@ntaheij.dev</a>
             <div className="flex flex-row gap-2 items-center">
               <a href="https://instagram.com/ntaheij" target="_blank"><i className="fab fa-instagram hover:text-gray-300 duration-200 ease-in-out"></i></a>
               <a href="https://facebook.com/ntaheij" target="_blank"><i className="fab fa-facebook hover:text-gray-300 duration-200 ease-in-out"></i></a>
