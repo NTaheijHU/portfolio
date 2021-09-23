@@ -13,6 +13,10 @@ body {
   overflow: hidden;
 }
 
+.topbar {
+  z-index: 999999 !important;
+}
+
 .custom-hero {
   background-color: rgba(38, 54, 87, 0.7);
 }

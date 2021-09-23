@@ -50,7 +50,7 @@ export default function Navigation() {
 
   const handleClick = (e) => {
     if (node.current === null || node.current === undefined) return;
-    if (node.current.contains(e.target)) {
+    if (!node.current.contains(e.target)) {
       // inside click
       return;
     }
@@ -61,7 +61,7 @@ export default function Navigation() {
   return (
     <>
       {/* navigation */}
-      <nav className="bg-white shadow-sm py-6 text-gray-700">
+      <nav className="bg-white shadow-sm py-6 text-gray-700 topbar">
         <div className="flex justify-between max-w-7xl mx-auto xl:px-0 px-4">
           <div className="order-last md:order-first flex items-center">
             <a href="/" role="button" aria-label="Home">
@@ -85,11 +85,11 @@ export default function Navigation() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ x: "-100%" }}
-            animate={{ x: "0%" }}
+            initial={{ y: "-100%" }}
+            animate={{ y: "10%" }}
             transition={{ duration: 0.3 }}
-            exit={{ x: "-100%" }}
-            className="w-3/4 shadow-sm fixed left-0 top-0 bg-white h-full flex flex-col items-center gap-8 text-xl p-8 z-50"
+            exit={{ y: "-100%" }}
+            className="w-full shadow-sm fixed left-0 top-0 bg-white h-full flex flex-col items-center gap-8 text-xl p-8"
             ref={node}
           >
             <div className="text-2xl text-gray-900 absolute right-8">
