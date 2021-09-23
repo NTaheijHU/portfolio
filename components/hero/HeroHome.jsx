@@ -20,7 +20,7 @@ export default function HeroHome() {
   const shouldReduceMotion = useReducedMotion();
 
   let animateArrow = shouldReduceMotion ? { opacity: 1 } : { opacity: 0 };
-  let animateDown = shouldReduceMotion ? { y:"0%", opacity: 1 } : { y:"-1000%", opacity: 0 };
+  let animateDown = shouldReduceMotion ? { y:"0%", opacity: 1 } : { y:"-500%", opacity: 0 };
   let animateUp = shouldReduceMotion ? { y:"0%", opacity: 1 } : { y:"500%", opacity: 0 };
 
   return (
