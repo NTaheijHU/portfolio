@@ -20,7 +20,7 @@ export default function HeroHome() {
   const shouldReduceMotion = useReducedMotion();
 
   let animateArrow = shouldReduceMotion ? { opacity: 1 } : { opacity: 0 };
-  let animateDown = shouldReduceMotion ? { y:"0%", opacity: 1 } : { y:"-500%", opacity: 0 };
+  let animateDown = shouldReduceMotion ? { y:"0%", opacity: 1 } : { y:"-200%", opacity: 0 };
   let animateUp = shouldReduceMotion ? { y:"0%", opacity: 1 } : { y:"500%", opacity: 0 };
 
   return (
@@ -31,14 +31,14 @@ export default function HeroHome() {
             <motion.div             
               initial={animateDown}
               animate={{ y: "0%", opacity: 1 }}
-              transition={{ delay: 1.0, duration: 0.8 }}
+              transition={{ delay: 1.0, duration: 0.6 }}
             >
               <h1 className="text-7xl">NOAH TAHEIJ</h1>
             </motion.div>
             <motion.div             
               initial={animateUp}
               animate={{ y: "0%", opacity: 1 }}
-              transition={{ delay: 1.8, duration: 0.6 }}
+              transition={{ delay: 1.6, duration: 0.6 }}
             >
               <h2 className="text-4xl my-8 lg:my-16">WEBSITE & APPLICATION DEVELOPER</h2>
             </motion.div>
@@ -46,7 +46,7 @@ export default function HeroHome() {
             <motion.div             
               initial={animateArrow}
               animate={{ opacity: 1 }}
-              transition={{ delay: 2.6, duration: 0.8 }}
+              transition={{ delay: 2.2, duration: 0.8 }}
             >
               <div className="grid justify-items-center lg:my-64" role="img" aria-label="Pijl voor scrollen">
                 <a href="#about-me">
