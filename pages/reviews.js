@@ -14,7 +14,7 @@ export default function Reviews() {
         {/* Review Overview */}
         <div id="review-overview">
           <br />
-          <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-0">
+          <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
               <ReviewOverviewCard
                 title="Klanten Reviews (31)"          
               >  
@@ -24,7 +24,7 @@ export default function Reviews() {
         
         {/* Reviews */}
         <div id="reviews">
-          <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-0">
+          <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
             <ReviewCard 
               name="Persoon van Persoon"
               title="Erg goede service"

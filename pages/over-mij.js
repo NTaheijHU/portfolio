@@ -25,7 +25,7 @@ export default function OverMij() {
       {/* About Me */}
       <div id="about-me">
         <br />
-        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-0">
+        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
             <ImageCard
               title="Noah Taheij"
               text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae odio voluptate alias. Non, ad velit? Placeat fugiat nam sapiente commodi, possimus quidem rerum maiores voluptate pariatur dignissimos, quibusdam error aspernatur?
@@ -54,7 +54,7 @@ export default function OverMij() {
         <br />
         <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Skills</h1>
 
-        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-0">
+        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
           <div className="flex flex-wrap -mx-1 lg:-mx-4">
               <SkillCard 
                 title="Skill 1"
