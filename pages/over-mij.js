@@ -19,7 +19,7 @@ export default function OverMij() {
  	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', originX: 0 } : { scale: 1.2, color: '#1d4ed8', originX: 0 };
 
   return (
-    <div>
+    <div className="bg-gray-200 bg-opacity-60">
       <Hero hero={hero} />
 
       {/* About Me */}

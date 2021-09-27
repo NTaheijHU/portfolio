@@ -9,7 +9,7 @@ export default function Reviews() {
   };
 
   return (
-    <div>
+    <div className="bg-gray-200 bg-opacity-60">
       <Hero hero={hero} />
         {/* Review Overview */}
         <div id="review-overview">

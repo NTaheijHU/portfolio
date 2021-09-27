@@ -16,7 +16,7 @@ export default function Portfolio() {
 
 
   return (
-    <div>
+    <div className="bg-gray-200 bg-opacity-60">
       <Hero hero={hero} />
 
       {/* Portfolio */}

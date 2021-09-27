@@ -12,7 +12,7 @@ import {
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-gray-200 bg-opacity-60">
       <HeroHome />
       {/* About Me */}
       <div id="about-me">
