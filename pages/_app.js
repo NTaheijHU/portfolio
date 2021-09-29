@@ -20,9 +20,11 @@ function MyApp({ Component, pageProps }) {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         />
       </Head>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <div className="bg-gray-200 bg-opacity-60" id="App">
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
     </>
   );
 }
