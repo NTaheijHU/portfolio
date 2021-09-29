@@ -90,9 +90,7 @@ export default function Project1() {
         <br />
           <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
             {/* Carousel */}
-            <CardCarousel 
-              
-            />
+            <CardCarousel />
           </div>
       </div>
     </div>
