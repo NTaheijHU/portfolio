@@ -75,6 +75,7 @@ export default function Portfolio() {
           <ProjectCard
               image="https://picsum.photos/600/400/?random"
               title="Project 1"
+              link="/projects/1"
               mirrored={true}
               text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
               githubLink="https://github.com/ntaheij/project1"
@@ -84,6 +85,7 @@ export default function Portfolio() {
           <ProjectCard 
               image="https://picsum.photos/600/400/?random"
               title="Project 1"
+              link="/projects/1"
               mirrored={false}
               text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
               githubLink="https://github.com/ntaheij/project1"
@@ -92,6 +94,7 @@ export default function Portfolio() {
           <ProjectCard 
               image="https://picsum.photos/600/400/?random"
               title="Project 1"
+              link="/projects/1"
               mirrored={true}
               text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur optio magnam perferendis blanditiis labore aliquam omnis culpa repellat, cum similique vitae? Distinctio, minima deleniti placeat veniam amet dolores corporis."
               githubLink="https://github.com/ntaheij/project1"

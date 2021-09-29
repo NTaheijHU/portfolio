@@ -100,7 +100,12 @@ export default function ProjectCard(props) {
             </div>
             <div className="p-6 lg:col-span-2">
                 <h2 className="uppercase font-medium text-4xl mb-3">{props.title}</h2>
-                <p className="leading-normal text-xl">{props.text}</p>
+                <p className="leading-normal text-xl">{props.text}&nbsp;
+                  <a className="no-underline hover:underline text-blue-700" href={props.link}>
+                    Lees meer...
+                  </a>
+                </p>
+                
             </div>
           </div>
         </section>
