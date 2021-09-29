@@ -30,6 +30,7 @@ function ContactCard(props) {
             </div>
           </div>
           <div className="mx-4 lg:my-4 lg:mt-4 lg:col-span-1 h-2/3 bg-gray-200 rounded-lg shadow-lg px-2 pt-2">
+            {/* TODO: Make Better Looking */}
             <h2 className="font-medium text-xl lg:text-2xl mb-3">Algemene Informatie</h2>
             <div className="flex flex-row gap-2 items-center mb-0">
               <a href="https://instagram.com/ntaheij" target="_blank"><i className="fab fa-instagram fa-2x hover:text-blue-800 duration-200 ease-in-out"></i></a>
