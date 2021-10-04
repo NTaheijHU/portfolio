@@ -4,8 +4,8 @@ import ReviewCard from "../components/cards/home/ReviewCard";
 import InfoCard from "../components/cards/home/InfoCard";
 import HeroHome from "../components/hero/HeroHome";
 
-import projectInfo from '../data/projects.json';
 import skillsInfo from '../data/skills.json';
+import projectInfo from '../data/projects.json';
 import reviewInfo from '../data/reviews.json';
 
 import {
@@ -15,6 +15,11 @@ import {
 } from "../components/effects/DisplayWhenVisible";
 
 export default function Home() {
+
+  let animIterSkills = 0;
+  let animIterProjects = 0;
+  let animIterReviews = 4;
+
   return (
     <div className="bg-gray-200 bg-opacity-60">
       <HeroHome />
@@ -35,12 +40,14 @@ export default function Home() {
           <div className="flex flex-wrap -mx-1 lg:-mx-4">
           {
             skillsInfo.map((skill) => {
+              animIterSkills++;
+
               return(
               <PopInWhenVisible
                 key={skill.name + "-anim" }
                 classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
-                delay="0.0"
-                duration="0.4"
+                delay={animIterSkills * 0.2 }
+                duration={0.4}
               >
                 <SkillCard 
                   key={skill.name + "-card" }
@@ -65,11 +72,13 @@ export default function Home() {
           <div className="flex flex-wrap -mx-1 lg:-mx-4">
             {
               projectInfo.slice(0, 3).map((project) => {
+                animIterProjects++;
+
                 return(
                   <SlideUpCardWhenVisible
                   key={project.name + "-anim" }
                   classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3"
-                  delay="0.0"
+                  delay={animIterProjects * 0.2}
                   >
                     <ProjectCard 
                       key={project.name + "-card" }
@@ -105,13 +114,16 @@ export default function Home() {
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
             <div className="flex flex-wrap -mx-1 lg:-mx-4">
             {
-              reviewInfo.slice(0, 3).map((review) => {
+              reviewInfo.slice(0, 4).map((review) => {
+                animIterReviews--;
                 return(
                   <SlideRightCardWhenVisible
+                      key={review.name + "-anim" }
                       classes="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
-                      delay="0.6"
+                      delay={animIterReviews * 0.2}
                   >
                     <ReviewCard 
+                    key={review.name + "-card" }
                     image={review.image}
                     quote={review.quote}
                     name={review.name}
