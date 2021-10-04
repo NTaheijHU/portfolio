@@ -9,6 +9,7 @@
     "cleanup": "rimraf .next/cache"
   },
   "dependencies": {
+    "fetch": "^1.1.0",
     "framer-motion": "^4.1.17",
     "next": "latest",
     "react": "^17.0.1",

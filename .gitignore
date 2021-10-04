@@ -9,6 +9,7 @@
 
 # testing
 /coverage
+/data/*.json
 
 # production
 /build

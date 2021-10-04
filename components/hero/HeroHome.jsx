@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import {useReducedMotion, motion} from "framer-motion";
 
+import aboutInfo from '../../data/about.json';
+
 export default function HeroHome() {
   useEffect(() => {
     let element = document.getElementById("header");
@@ -33,14 +35,14 @@ export default function HeroHome() {
               animate={{ y: "0%", opacity: 1 }}
               transition={{ delay: 1.0, duration: 0.6 }}
             >
-              <h1 className="text-7xl">NOAH TAHEIJ</h1>
+              <h1 className="text-7xl uppercase">{aboutInfo.name}</h1>
             </motion.div>
             <motion.div             
               initial={animateUp}
               animate={{ y: "0%", opacity: 1 }}
               transition={{ delay: 1.6, duration: 0.6 }}
             >
-              <h2 className="text-4xl my-8 lg:my-16">WEBSITE & APPLICATION DEVELOPER</h2>
+              <h2 className="text-4xl my-8 lg:my-16">{aboutInfo.title}</h2>
             </motion.div>
 
             <motion.div             

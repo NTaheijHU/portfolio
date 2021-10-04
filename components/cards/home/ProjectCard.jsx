@@ -22,7 +22,7 @@ export default function ProjectCard(props) {
         <section className="flex px-2 pb-4 md:px-4 md:pb-4">
           <div className="no-underline text-black" href="#">
             <p className="text-md">
-                {props.text}
+                {props.text + " "}
                 <a className="no-underline hover:underline text-blue-700" href={props.link}>
                   Lees meer...
                 </a>
