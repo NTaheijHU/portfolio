@@ -1,3 +1,5 @@
+import projectInfo from '../../data/projects.json';
+
 export default function LinkFooter() {
   return (
     <div className="bg-gray-900 font-semibold text-gray-50 text-lg text-center md:text-left">
@@ -22,9 +24,15 @@ export default function LinkFooter() {
           </div>
           <div className="w-full md:w-1/4 flex flex-col gap-4 footer-panel">
             <h2 className="sm:pb-4 text-3xl">Portfolio</h2>
-            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="projects/1">Project 1</a>
-            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="projects/2">Project 2</a>
-            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="projects/3">Project 3</a>
+            {
+              projectInfo.slice(0, 3).map((project) => {
+                return (
+                  <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href={project.link}
+                  key={project.name}
+                  >{project.name}</a>
+                )
+              })
+            }
           </div>
           <div className="w-full md:w-1/4 flex flex-col gap-4 pb-2 footer-panel">
             <h2 className="sm:pb-4 text-3xl">Links</h2>
