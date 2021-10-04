@@ -4,10 +4,8 @@ import ImageCard from "../components/cards/ImageCard";
 
 import {useReducedMotion, motion} from "framer-motion";
 
-import {
-  PopInWhenVisible
-} from "../components/effects/DisplayWhenVisible";
-
+import aboutInfo from '../data/about.json';
+import skillsInfo from '../data/skills.json';
 
 export default function OverMij() {
   const hero = {
@@ -27,12 +25,9 @@ export default function OverMij() {
         <br />
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
             <ImageCard
-              title="Noah Taheij"
-              text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae odio voluptate alias. Non, ad velit? Placeat fugiat nam sapiente commodi, possimus quidem rerum maiores voluptate pariatur dignissimos, quibusdam error aspernatur?
-              Excepturi magnam ducimus sunt quam delectus nulla porro eius voluptate, maxime repellat. Esse accusantium quasi expedita nobis nostrum alias, ex officiis ullam officia, eos sequi saepe voluptate voluptatem nihil voluptas.
-              Earum, sunt harum. Ab quae temporibus pariatur iure suscipit ipsum maxime tenetur, dolorem minima fuga dolore nihil itaque iste quod corrupti rem facere sequi alias ad tempora adipisci culpa reiciendis.
-              Minima numquam nesciunt libero maxime voluptates voluptatibus laboriosam adipisci blanditiis culpa asperiores molestias aliquam ullam explicabo ratione reprehenderit officiis, autem quidem quae nobis ducimus magni ad. Repellendus obcaecati tenetur officia!"
-              image="https://picsum.photos/512/256/?random"
+              title={aboutInfo.name}
+              text={aboutInfo.aboutTextLong}
+              image={aboutInfo.image}
             >
               <motion.div className="flex leading-tight p-2 md:p-4"
               whileHover= { animateIcon }
@@ -56,54 +51,17 @@ export default function OverMij() {
 
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
           <div className="flex flex-wrap -mx-1 lg:-mx-4">
-              <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-                link="/portfolio?filter=js"
-              /> 
-              <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-                link="/portfolio?filter=js"
+          {
+            skillsInfo.map((skill) => {
+              return (
+                <SkillCard 
+                  title={skill.name}
+                  text={skill.details}
+                  link={"/portfolio?filter=" + skill.short}
                 /> 
-              <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-                link="/portfolio?filter=js"
-              />
-              <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-                link="/portfolio?filter=js"
-              /> 
-              <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-                link="/portfolio?filter=js"
-                /> 
-              <SkillCard 
-                title="Skill 1"
-                text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad similique, maxime deleniti laboriosam facilis dolor. Molestias rerum reiciendis provident cumque vero doloremque, quas nihil saepe distinctio ducimus quidem consequuntur laudantium.
-                Mollitia nemo voluptas accusamus, et reprehenderit beatae hic dolorum doloribus esse laudantium, quod facere rerum officia amet? Totam maxime libero doloribus ipsa ab quo magni, assumenda sed illum nemo deserunt.
-                Iure, maxime? Ipsam accusamus possimus sunt enim, fugit illo sed mollitia voluptatem ducimus ea excepturi sequi id veniam, temporibus ut eius saepe minus quos similique exercitationem minima, distinctio quisquam."
-                useTime="3"
-                link="/portfolio?filter=js"
-              /> 
+              )
+            })
+          }
           </div>
         </div>
       </div>
