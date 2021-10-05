@@ -1,6 +1,6 @@
 function ReviewCard(props) {
   return (
-    <div className="">
+    <div id={props.name}>
       <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 mt-4 lg:mt-8">
         <div className="lg:flex m-0">
           <div className="p-6">

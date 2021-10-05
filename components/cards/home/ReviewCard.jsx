@@ -1,6 +1,6 @@
 export default function ReviewCard(props) {
   return(
-    <div className="">
+    <a href={"/reviews#" + props.name}>
       <section className= "pt-4 rounded-xl shadow mx-auto my-10 mt-2 md:mt-4 bg-gray-50 bg-opacity-90">
         <blockquote className="m-2 lg:m-4">
           <p className= "font-semibold"> "{props.quote}" </p>
@@ -13,6 +13,6 @@ export default function ReviewCard(props) {
           </div>
         </div>
       </section>
-    </div>
+    </a>
   );
 }
