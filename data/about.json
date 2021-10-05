@@ -1,0 +1,40 @@
+{
+  "name": "Noah Taheij",
+  "title": "Website & Application Developer",
+  "image": "https://picsum.photos/512/256/?random",
+  "aboutText": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, esse ad? Tempore perferendis quia, voluptates laboriosam pariatur aspernatur quo. Laborum veniam molestiae odit omnis possimus ipsum quia odio. Perspiciatis enim delectus expedita aspernatur ex eaque quia reiciendis fugit quidem magni!",
+  "aboutTextLong": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae odio voluptate alias. Non, ad velit? Placeat fugiat nam sapiente commodi, possimus quidem rerum maiores voluptate pariatur dignissimos, quibusdam error aspernatur? Excepturi magnam ducimus sunt quam delectus nulla porro eius voluptate, maxime repellat. Esse accusantium quasi expedita nobis nostrum alias, ex officiis ullam officia, eos sequi saepe voluptate voluptatem nihil voluptas. Earum, sunt harum. Ab quae temporibus pariatur iure suscipit ipsum maxime tenetur, dolorem minima fuga dolore nihil itaque iste quod corrupti rem facere sequi alias ad tempora adipisci culpa reiciendis. Minima numquam nesciunt libero maxime voluptates voluptatibus laboriosam adipisci blanditiis culpa asperiores molestias aliquam ullam explicabo ratione reprehenderit officiis, autem quidem quae nobis ducimus magni ad. Repellendus obcaecati tenetur officia!",
+  "projects": {
+    "title": "Mijn Projecten",
+    "image": "https://picsum.photos/512/256/?random",
+    "details": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae odio voluptate alias. Non, ad velit? Placeat fugiat nam sapiente commodi, possimus quidem rerum maiores voluptate pariatur dignissimos, quibusdam error aspernatur? Excepturi magnam ducimus sunt quam delectus nulla porro eius voluptate, maxime repellat. Esse accusantium quasi expedita nobis nostrum alias, ex officiis ullam officia, eos sequi saepe voluptate voluptatem nihil voluptas. Earum, sunt harum. Ab quae temporibus pariatur iure suscipit ipsum maxime tenetur, dolorem minima fuga dolore nihil itaque iste quod corrupti rem facere sequi alias ad tempora adipisci culpa reiciendis. Minima numquam nesciunt libero maxime voluptates voluptatibus laboriosam adipisci blanditiis culpa asperiores molestias aliquam ullam explicabo ratione reprehenderit officiis, autem quidem quae nobis ducimus magni ad. Repellendus obcaecati tenetur officia!",
+    "githubLink": "https://github.com/ntaheij",
+    "gitlabLink": "https://gitlab.com/ntaheij"
+  },
+  "contact": {
+    "phone": "+31 (0)85 015 0016",
+    "email": "info@ntaheij.dev",
+    "socials": [
+      {
+        "name": "Instagram",
+        "link": "https://instagram.com/ntaheij"
+      },
+      {
+        "name": "Facebook",
+        "link": "https://facebook.com/ntaheij"
+      },
+      {
+        "name": "Twitter",
+        "link": "https://twitter.com/ntaheij"
+      },
+      {
+        "name": "LinkedIn",
+        "link": "https://www.linkedin.com/in/ntaheij"
+      },
+      {
+        "name": "Github",
+        "link": "https://github.com/ntaheij"
+      }
+    ]
+  }
+}
