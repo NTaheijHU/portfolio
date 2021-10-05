@@ -14,7 +14,7 @@ import {
   SlideRightCardWhenVisible
 } from "../components/effects/DisplayWhenVisible";
 
-export default function Home() {
+export function Home(props) {
 
   let animIterSkills = 0;
   let animIterProjects = 0;
@@ -39,7 +39,7 @@ export default function Home() {
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
           <div className="flex flex-wrap -mx-1 lg:-mx-4">
           {
-            skillsInfo.map((skill) => {
+            props.skillsInfo.map((skill) => {
               animIterSkills++;
 
               return(
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
           <div className="flex flex-wrap -mx-1 lg:-mx-4">
             {
-              projectInfo.slice(0, 3).map((project) => {
+              props.projectInfo.slice(0, 3).map((project) => {
                 animIterProjects++;
 
                 return(
@@ -114,7 +114,7 @@ export default function Home() {
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
             <div className="flex flex-wrap -mx-1 lg:-mx-4">
             {
-              reviewInfo.slice(0, 4).map((review) => {
+              props.reviewInfo.slice(0, 4).map((review) => {
                 animIterReviews--;
                 return(
                   <SlideRightCardWhenVisible
@@ -139,4 +139,13 @@ export default function Home() {
     </div>
   );
 }
+
+export async function getStaticProps() {
+  return {
+    props: { reviewInfo, projectInfo, skillsInfo },
+  }
+}
+
+
+export default Home;
   

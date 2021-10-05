@@ -4,7 +4,7 @@ import Hero from "../components/hero/Hero";
 
 import reviewInfo from '../data/reviews.json';
 
-export default function Reviews() {
+export function Reviews(props) {
   const hero = {
     title: "Reviews",
   };
@@ -17,8 +17,8 @@ export default function Reviews() {
           <br />
           <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
               <ReviewOverviewCard
-                title={"Klanten Reviews (" + reviewInfo.length + ")"}  
-                reviews={reviewInfo}   
+                title={"Klanten Reviews (" + props.reviewInfo.length + ")"}  
+                reviews={props.reviewInfo}   
               >  
               </ReviewOverviewCard>
           </div>
@@ -28,7 +28,7 @@ export default function Reviews() {
         <div id="reviews">
           <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
             {
-              reviewInfo.map((review) => {
+              props.reviewInfo.map((review) => {
                 return (
                   <ReviewCard 
                     key={review.name}
@@ -46,4 +46,12 @@ export default function Reviews() {
   );
 }
 
+export async function getStaticProps() {
+  return {
+    props: { reviewInfo },
+  }
+}
+
+
+export default Reviews;
   

@@ -42,13 +42,16 @@ export default function ProjectCard(props) {
                       whileFocus= { animateIcon }
                       className="far fa-window-maximize fa-2x" />
                     </a>
-                    
-                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
-                      REACT
-                    </a>
-                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
-                      TAILWINDCSS
-                    </a>
+                    {
+                      props.skills.map((skill) => {
+                        return (
+                          <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out"
+                          key={skill}>
+                            {skill}
+                        </a>
+                        )
+                      })
+                    }
                   </div>
                 </section>
               </div>
@@ -88,13 +91,16 @@ export default function ProjectCard(props) {
                       whileFocus= { animateIcon }
                       className="far fa-window-maximize fa-2x"></motion.i>
                     </a>
-
-                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
-                      REACT
-                    </a>
-                    <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-md py-1 px-2 rounded-xl duration-200 ease-in-out">
-                      TAILWINDCSS
-                    </a>
+                    {
+                      props.skills.map((skill) => {
+                        return (
+                          <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out"
+                          key={skill}>
+                            {skill}
+                        </a>
+                        )
+                      })
+                    }
                   </div>
                 </section>
             </div>

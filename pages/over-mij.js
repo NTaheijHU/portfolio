@@ -7,7 +7,7 @@ import {useReducedMotion, motion} from "framer-motion";
 import aboutInfo from '../data/about.json';
 import skillsInfo from '../data/skills.json';
 
-export default function OverMij() {
+export function OverMij(props) {
   const hero = {
     title: "Over Mij",
   };
@@ -52,7 +52,7 @@ export default function OverMij() {
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
           <div className="flex flex-wrap -mx-1 lg:-mx-4">
           {
-            skillsInfo.map((skill) => {
+            props.skillsInfo.map((skill) => {
               return (
                 <SkillCard 
                   title={skill.name}
@@ -68,5 +68,14 @@ export default function OverMij() {
     </div>
   );
 }
+
+export async function getStaticProps() {
+  return {
+    props: { aboutInfo, skillsInfo },
+  }
+}
+
+
+export default OverMij;
 
   

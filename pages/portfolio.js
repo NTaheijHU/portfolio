@@ -8,7 +8,7 @@ import aboutInfo from '../data/about.json';
 import skillsInfo from '../data/skills.json';
 import projectInfo from '../data/projects.json';
 
-export default function Portfolio() {
+export function Portfolio(props) {
   const hero = {
     title: "Portfolio",
   };
@@ -28,20 +28,20 @@ export default function Portfolio() {
         <br />
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
             <ImageCard
-              title={aboutInfo.projects.title}
-              text={aboutInfo.projects.details}
-              image={aboutInfo.projects.image}
+              title={props.aboutInfo.projects.title}
+              text={props.aboutInfo.projects.details}
+              image={props.aboutInfo.projects.image}
             >
               <section>
                 <div className="flex leading-tight p-2 md:p-4">
-                  <a className="no-underline text-grey-darker mr-2" href={aboutInfo.projects.githubLink}>
+                  <a className="no-underline text-grey-darker mr-2" href={props.aboutInfo.projects.githubLink}>
                     <span className="hidden">Github</span>
                     <motion.i
                     whileHover= { animateIcon }
                     whileFocus= { animateIcon }
                     className="fab fa-github fa-2x"></motion.i>
                   </a>
-                  <a className="no-underline text-grey-darker mr-2" href={aboutInfo.projects.gitlabLink}>
+                  <a className="no-underline text-grey-darker mr-2" href={props.aboutInfo.projects.gitlabLink}>
                     <span className="hidden">Gitlab</span>
                     <motion.i
                     whileHover= { animateIcon }
@@ -59,8 +59,8 @@ export default function Portfolio() {
         <div className="container mb-2 mt-4 md:mt-8 mx-auto px-2 md:px-4">
           <div className="grid grid-cols-2 md:grid-cols-8">
             {
-              skillsInfo.map((skill) => {
-                if(skillsInfo[0] === skill) {
+              props.skillsInfo.map((skill) => {
+                if(props.skillsInfo[0] === skill) {
                   return (
                     <a className="ml-2 mt-2 bg-gray-600 hover:bg-gray-600 text-gray-200 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
                       key={skill.name}>
@@ -82,7 +82,7 @@ export default function Portfolio() {
         </div>
         <div className="container mb-12 mx-auto px-2 md:px-4">
           {
-            projectInfo.map((project) => {
+            props.projectInfo.map((project) => {
               iterProjects++;
 
               if(iterProjects % 2 === 0) {
@@ -96,6 +96,7 @@ export default function Portfolio() {
                   text={project.shortDescription}
                   githubLink={project.githubLink}
                   websiteLink={project.websiteLink}    
+                  skills={project.skills}
                   />
                 )
               } else {
@@ -109,6 +110,7 @@ export default function Portfolio() {
                   text={project.shortDescription}
                   githubLink={project.githubLink}
                   websiteLink={project.websiteLink}
+                  skills={project.skills}
                   />
                 )
               }
@@ -120,4 +122,11 @@ export default function Portfolio() {
   );
 }
 
-  
+export async function getStaticProps() {
+  return {
+    props: { aboutInfo, skillsInfo, projectInfo },
+  }
+}
+
+
+export default Portfolio;
