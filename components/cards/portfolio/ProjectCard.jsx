@@ -117,6 +117,5 @@ export default function ProjectCard(props) {
         </section>
       </article>  
     );
-  }
-  
+  } 
 }
