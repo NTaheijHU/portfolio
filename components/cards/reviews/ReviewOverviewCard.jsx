@@ -32,8 +32,6 @@ function ReviewOverviewCard(props) {
     reviewPercentage[star] = Math.round(reviewStars[star] / totalReviews * 100);
   });
 
-  console.log(reviewPercentage);
-
   return ( 
     <div>
       <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 mt-2 md:mt-4">
