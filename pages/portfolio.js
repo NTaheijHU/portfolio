@@ -41,13 +41,6 @@ export function Portfolio(props) {
                     whileFocus= { animateIcon }
                     className="fab fa-github fa-2x"></motion.i>
                   </a>
-                  <a className="no-underline text-grey-darker mr-2" href={props.aboutInfo.projects.gitlabLink}>
-                    <span className="hidden">Gitlab</span>
-                    <motion.i
-                    whileHover= { animateIcon }
-                    whileFocus= { animateIcon }
-                    className="fab fa-gitlab fa-2x"></motion.i>
-                  </a>
                 </div>
               </section>
             </ImageCard>
