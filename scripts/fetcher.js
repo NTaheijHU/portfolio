@@ -1,15 +1,12 @@
 const fetch = require('node-fetch');
 const fs  = require('fs');
-const colors = require('colors');
-const { mainModule } = require('process');
 
+require('colors');
 require('dotenv').config();
   
 const endpoint = process.env.API_ENDPOINT;
 let args = process.argv.slice(2);
 let savePath = '';
-
-main();
 
 async function main() {  
   console.log('Fetching data from API...'.cyan);
@@ -48,103 +45,33 @@ async function main() {
   
   const queryTime = Math.round(Math.random() * (300 - 200) + 100) + "";
   console.log('Query preperation time: '.blue + queryTime.green + 'μs'.cyan)
-  
-  console.log('');
 
-  console.log('Executing About Query'.cyan);
-  await getAboutData();
+  await executeQuery('about', 'About');
+  await executeQuery('skills', 'Skills');
+  await executeQuery('project', 'Projects');
+  await executeQuery('review', 'Reviews');
 
-  console.log('');
-
-  console.log('Executing Skills Query'.cyan);
-  await getSkillData();
-
-  console.log('');
-
-  console.log('Executing Project Query'.cyan);
-  await getProjectData();
-
-  console.log('');
-
-  console.log('Executing Reviews Query'.cyan);
-  await getReviewData();
-
-  console.log('');
+  console.log('Fetching done...')
 }
 
-async function getAboutData() {
+async function executeQuery(query, name) {
+  console.log('\n' +
+      'Executing '.cyan + name.cyan + ' Query'.cyan);
   const projecTime = new Date();
-  await fetch(endpoint + '/')
+  await fetch(endpoint + '/' /* + query*/ )
     .then(res => res.json())
     .then(data => {
       const rawData = JSON.stringify(data);
 
-      fs.writeFileSync(savePath + 'about.json', rawData, (err) => {
+      fs.writeFileSync(savePath + query + '.json', rawData, (err) => {
           if (err) throw err;
       });
 
       const dataAmount = data.amount ? data.amount + "" : 0 + "";
-      console.log('About Query Amount: '.blue + dataAmount.green);
+      console.log(name.blue + ' Query Amount: '.blue + dataAmount.green);
 
       const rTime = new Date().getTime() - projecTime.getTime() + "";
-      console.log('About Query Execution Time: '.blue + rTime.green + 'ms'.cyan);
-    })
-}
-
-async function getSkillData() {
-  const projecTime = new Date();
-  await fetch(endpoint + '/')
-    .then(res => res.json())
-    .then(data => {
-      const rawData = JSON.stringify(data);
-
-      fs.writeFileSync(savePath + 'skills.json', rawData, (err) => {
-          if (err) throw err;
-      });
-
-      const dataAmount = data.amount ? data.amount + "" : 0 + "";
-      console.log('Skills Query Amount: '.blue + dataAmount.green);
-
-      const rTime = new Date().getTime() - projecTime.getTime() + "";
-      console.log('Skills Query Execution Time: '.blue + rTime.green + 'ms'.cyan);
-    })
-}
-
-async function getProjectData() {
-  const projecTime = new Date();
-  await fetch(endpoint + '/')
-    .then(res => res.json())
-    .then(data => {
-      const rawData = JSON.stringify(data);
-
-      fs.writeFileSync(savePath + 'projects.json', rawData, (err) => {
-          if (err) throw err;
-      });
-
-      const dataAmount = data.amount ? data.amount + "" : 0 + "";
-      console.log('Project Query Amount: '.blue + dataAmount.green);
-
-      const rTime = new Date().getTime() - projecTime.getTime() + "";
-      console.log('Project Query Execution Time: '.blue + rTime.green + 'ms'.cyan);
-    })
-}
-
-async function getReviewData() {
-  const projecTime = new Date();
-  await fetch(endpoint + '/')
-    .then(res => res.json())
-    .then(data => {
-      const rawData = JSON.stringify(data);
-
-      fs.writeFileSync(savePath + 'reviews.json', rawData, (err) => {
-          if (err) throw err;
-      });
-
-      const dataAmount = data.amount ? data.amount + "" : 0 + "";
-      console.log('Review Query Amount: '.blue + dataAmount.green);
-
-      const rTime = new Date().getTime() - projecTime.getTime() + "";
-      console.log('Review Query Execution Time: '.blue + rTime.green + 'ms'.cyan);
+      console.log(name.blue + ' Query Execution Time: '.blue + rTime.green + 'ms'.cyan);
     })
 }
 
@@ -159,3 +86,5 @@ async function getAPIStatus() {
     });
   return response;
 }
+
+main();
