@@ -48,8 +48,8 @@ async function main() {
 
   await executeQuery('about', 'About');
   await executeQuery('skills', 'Skills');
-  await executeQuery('project', 'Projects');
-  await executeQuery('review', 'Reviews');
+  await executeQuery('projects', 'Projects');
+  await executeQuery('reviews', 'Reviews');
 
   console.log('Fetching done...')
 }
