@@ -10,7 +10,7 @@
 
 # testing
 /coverage
-# /data/*.json
+/data/*.json
 /data/dev
 
 # production
