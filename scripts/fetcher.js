@@ -51,18 +51,73 @@ async function main() {
   
   console.log('');
 
+  console.log('Executing About Query'.cyan);
+  await getAboutData();
+
+  console.log('');
+
+  console.log('Executing Skills Query'.cyan);
+  await getSkillData();
+
+  console.log('');
+
   console.log('Executing Project Query'.cyan);
-  getProjectData();
+  await getProjectData();
+
+  console.log('');
+
+  console.log('Executing Reviews Query'.cyan);
+  await getReviewData();
+
+  console.log('');
 }
 
-function getProjectData() {
+async function getAboutData() {
   const projecTime = new Date();
-  fetch(endpoint + '/users')
+  await fetch(endpoint + '/')
     .then(res => res.json())
     .then(data => {
       const rawData = JSON.stringify(data);
 
-      fs.writeFileSync(savePath + 'test.json', rawData, (err) => {
+      fs.writeFileSync(savePath + 'about.json', rawData, (err) => {
+          if (err) throw err;
+      });
+
+      const dataAmount = data.amount ? data.amount + "" : 0 + "";
+      console.log('About Query Amount: '.blue + dataAmount.green);
+
+      const rTime = new Date().getTime() - projecTime.getTime() + "";
+      console.log('About Query Execution Time: '.blue + rTime.green + 'ms'.cyan);
+    })
+}
+
+async function getSkillData() {
+  const projecTime = new Date();
+  await fetch(endpoint + '/')
+    .then(res => res.json())
+    .then(data => {
+      const rawData = JSON.stringify(data);
+
+      fs.writeFileSync(savePath + 'skills.json', rawData, (err) => {
+          if (err) throw err;
+      });
+
+      const dataAmount = data.amount ? data.amount + "" : 0 + "";
+      console.log('Skills Query Amount: '.blue + dataAmount.green);
+
+      const rTime = new Date().getTime() - projecTime.getTime() + "";
+      console.log('Skills Query Execution Time: '.blue + rTime.green + 'ms'.cyan);
+    })
+}
+
+async function getProjectData() {
+  const projecTime = new Date();
+  await fetch(endpoint + '/')
+    .then(res => res.json())
+    .then(data => {
+      const rawData = JSON.stringify(data);
+
+      fs.writeFileSync(savePath + 'projects.json', rawData, (err) => {
           if (err) throw err;
       });
 
@@ -71,6 +126,25 @@ function getProjectData() {
 
       const rTime = new Date().getTime() - projecTime.getTime() + "";
       console.log('Project Query Execution Time: '.blue + rTime.green + 'ms'.cyan);
+    })
+}
+
+async function getReviewData() {
+  const projecTime = new Date();
+  await fetch(endpoint + '/')
+    .then(res => res.json())
+    .then(data => {
+      const rawData = JSON.stringify(data);
+
+      fs.writeFileSync(savePath + 'reviews.json', rawData, (err) => {
+          if (err) throw err;
+      });
+
+      const dataAmount = data.amount ? data.amount + "" : 0 + "";
+      console.log('Review Query Amount: '.blue + dataAmount.green);
+
+      const rTime = new Date().getTime() - projecTime.getTime() + "";
+      console.log('Review Query Execution Time: '.blue + rTime.green + 'ms'.cyan);
     })
 }
 
