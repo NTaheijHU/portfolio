@@ -11,6 +11,7 @@
 # testing
 /coverage
 # /data/*.json
+/data/dev
 
 # production
 /build
