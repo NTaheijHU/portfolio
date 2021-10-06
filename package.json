@@ -6,8 +6,8 @@
     "dev": "next dev",
     "fetchDev": "node scripts/fetcher.js -D",
     "fetch": "node scripts/fetcher.js",
-    "build": "node scripts/fetcher.js && next build && next export",
-    "buildOnly": "next build && next export",
+    "build": "next build && next export",
+    "build-and-fetch": "node scripts/fetcher.js && next build && next export",
     "start": "next start",
     "cleanup": "rimraf .next/cache"
   },
