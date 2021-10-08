@@ -51,14 +51,14 @@ async function main() {
   await executeQuery('projects', 'Projects');
   await executeQuery('reviews', 'Reviews');
 
-  console.log('Fetching done...')
+  console.log('Fetching done...');
 }
 
 async function executeQuery(query, name) {
   console.log('\n' +
       'Executing '.cyan + name.cyan + ' Query'.cyan);
   const projecTime = new Date();
-  await fetch(endpoint + '/' /* + query*/ )
+  await fetch(endpoint + '/' + query )
     .then(res => res.json())
     .then(data => {
       const rawData = JSON.stringify(data);
@@ -67,7 +67,7 @@ async function executeQuery(query, name) {
           if (err) throw err;
       });
 
-      const dataAmount = data.amount ? data.amount + "" : 0 + "";
+      const dataAmount = data.length ? data.length + "" : 0 + "";
       console.log(name.blue + ' Query Amount: '.blue + dataAmount.green);
 
       const rTime = new Date().getTime() - projecTime.getTime() + "";
