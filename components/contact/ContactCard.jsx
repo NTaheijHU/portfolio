@@ -79,13 +79,12 @@ function handleMessageChange(event) {
   let message = event.target.value;
   let messageLength = message.length;
 
-  document.getElementById('bericht-max').innerHTML = 'Karakters: ' + messageLength + '/2000';
-
-  console.log(messageLength);
-
   if(messageLength > 2000) {
     event.target.value = message.slice(0, 2000-1);
+    return;
   }
+
+  document.getElementById('bericht-max').innerHTML = 'Karakters: ' + messageLength + '/2000';
 }
 
 export default ContactCard;
