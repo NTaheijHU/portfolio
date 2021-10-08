@@ -52,7 +52,8 @@ async function main() {
   await executeQuery('projects', 'Projects');
   await executeQuery('reviews', 'Reviews');
 
-  console.log('Fetching done...');
+  console.log('Fetching done...'.cyan);
+  console.log('Total time'.cyan + ': ' + (new Date().getTime() - apiTime.getTime() + "").green + 'ms'.cyan);
 }
 
 async function executeQuery(query, name) {
