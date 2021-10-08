@@ -55,6 +55,7 @@ export function OverMij(props) {
             props.skillsInfo.map((skill) => {
               return (
                 <SkillCard 
+                  key={skill.name}
                   title={skill.name}
                   text={skill.details}
                   link={"/portfolio?filter=" + skill.short}
