@@ -46,7 +46,8 @@ async function main() {
   const queryTime = Math.round(Math.random() * (300 - 200) + 100) + "";
   console.log('Query preperation time: '.blue + queryTime.green + 'μs'.cyan)
 
-  await executeQuery('about', 'About');
+  // TODO: FIX ABOUT ENDPOINT
+  // await executeQuery('about', 'About');
   await executeQuery('skills', 'Skills');
   await executeQuery('projects', 'Projects');
   await executeQuery('reviews', 'Reviews');
