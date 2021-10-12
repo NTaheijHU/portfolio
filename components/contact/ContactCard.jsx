@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function ContactCard(props) {
   return ( 
     <div>
@@ -8,27 +6,27 @@ function ContactCard(props) {
             <div className="lg:my-4 lg:mx-4">
               <h2 className="uppercase font-medium text-3xl lg:text-4xl mb-3">{props.title}</h2>
               <div className="flex justify-center mx-auto bg-gray-200 rounded-lg shadow-lg">
-                <form action="#" type="POST" className="w-full">
+                <form className="w-full">
                   <div className="p-3">
-                    <label htmlFor="naam">Naam</label>
-                    <input id="naam" onChange={ handleNameChange } maxLength="50" className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-4 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 border-red-500" type="text" placeholder="Naam" required />
+                    <label htmlFor="name">Naam</label>
+                    <input id="name" onChange={ handleNameChange } maxLength="50" className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-4 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 border-red-500" type="text" placeholder="Naam" required />
                   </div>
                   <div className="p-3">
                     <label htmlFor="email">Email</label>
                     <input id="email" onChange={ handleEmailChange } className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-4 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 border-red-500" type="email" placeholder="Email Adres" required />
                   </div>
                   <div className="p-3">
-                    	<label htmlFor="telefoonnummer">Telefoonnummer</label>
-                    <input id="telefoonnummer" onChange={ handlePhoneChange } className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-4 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 border-red-500" type="text" placeholder="Telefoon Nummer" />
+                    	<label htmlFor="phone">Telefoonnummer</label>
+                    <input id="phone" onChange={ handlePhoneChange } className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-4 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 border-red-500" type="text" placeholder="Telefoon Nummer" />
                   </div>
                   <div className="p-3">
-                    <label htmlFor="bericht">Bericht</label>
-                    <textarea id="bericht" onChange={ handleMessageChange } maxLength="2000" className="resize-none rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border-light-blue-400 w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56 border-red-500" placeholder="Bericht" required></textarea>
-                    <p id="bericht-max" className="text-xl mt-2 mb-0">Karakters: 0/2000</p>
+                    <label htmlFor="message">Bericht</label>
+                    <textarea id="message" onChange={ handleMessageChange } maxLength="2000" className="resize-none rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border-light-blue-400 w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56 border-red-500" placeholder="Bericht" required></textarea>
+                    <p id="message-max" className="text-xl mt-2 mb-0">Karakters: 0/2000</p>
                   </div>
                   <div className="p-3 pt-4">
-                  <button className="w-full bg-gray-700 hover:bg-gray-900 text-white font-bold py-3 px-4 rounded text-2xl">
-                  Send
+                  <button type="button" onClick={ handleEmail } className="w-full bg-gray-700 hover:bg-gray-900 text-white font-bold py-3 px-4 rounded text-2xl">
+                    Send
                   </button>
                   </div>
                 </form>
@@ -38,6 +36,31 @@ function ContactCard(props) {
       </section>
     </div>
    );
+}
+
+async function handleEmail(e) {
+  e.preventDefault(); 
+  await fetch('http://localhost:5000' + '/mail', {
+    method: 'POST',
+    headers: {
+      'User-Agent': 'NTaheij Mailer',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      message: document.getElementById('message').value
+    })
+  }).then((response) => {
+    if (response.status === 201) {
+      alert('Bericht verzonden');
+    } else {
+      alert('Er is iets fout gegaan');
+    }
+  });
+
+  return true;
 }
 
 function handleNameChange(event) {
@@ -84,7 +107,7 @@ function handleMessageChange(event) {
     return;
   }
 
-  document.getElementById('bericht-max').innerHTML = 'Karakters: ' + messageLength + '/2000';
+  document.getElementById('message-max').innerHTML = 'Karakters: ' + messageLength + '/2000';
 }
 
 export default ContactCard;
