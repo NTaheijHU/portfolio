@@ -8,8 +8,12 @@ import aboutInfo from '../data/about.json';
 import skillsInfo from '../data/skills.json';
 import projectInfo from '../data/projects.json';
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export function Portfolio(props) {
+  const router = useRouter();
+  let skillRouter = router.asPath.split("?filter=")[1];
+
   const hero = {
     title: "Portfolio",
   };
@@ -20,10 +24,9 @@ export function Portfolio(props) {
 
   let iterProjects = 0;
 
-  const [skill, setSkill] = useState("All");
+  const [skill, setSkill] = useState(getSkillByShort(skillRouter) ? getSkillByShort(skillRouter) : "All");
 
   useEffect(() => {
-    console.log('Update');
   }, [skill]);
 
   return (
@@ -129,7 +132,11 @@ export function Portfolio(props) {
 }
 
 function setSelectedSkill(button) {
-  const target = button.target;
+  setSelectedSkillForElement(button.target);
+}
+
+function setSelectedSkillForElement(id) {
+  const target = id;
   if(target.id === "selected") return;
 
   const selected =  document.getElementById("selected");
@@ -141,6 +148,14 @@ function setSelectedSkill(button) {
   target.classList.remove(...['bg-gray-300', 'text-gray-700']);
   target.classList.add(...['bg-gray-600', 'text-gray-200']);
   target.id = "selected";
+}
+
+function getSkillByShort(short) {
+  skillsInfo.map((skill) => {
+    if(skill.short === short) {
+      return skill.name;
+    }
+  });
 }
 
 export async function getStaticProps() {
