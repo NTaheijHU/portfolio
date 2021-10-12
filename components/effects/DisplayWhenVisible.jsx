@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, useReducedMotion } from "framer-motion";
 
 function PopInWhenVisible(props) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+
+  const shouldReduceMotion = useReducedMotion();
 
   const sideVariants = { 
       visible: { opacity: 1, scale: 1 },
@@ -21,7 +23,7 @@ function PopInWhenVisible(props) {
     <>
       <motion.div
         animate={controls}
-        initial="hidden"
+        initial={shouldReduceMotion ? "visible" : "hidden"}
         transition={{ 
           duration: props.duration ? props.duration : 0.3,
           delay: props.delay ? props.delay : 0.0,
@@ -42,6 +44,8 @@ function SlideUpCardWhenVisible(props) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
+  const shouldReduceMotion = useReducedMotion();
+
   const sideVariants = { 
       visible: { opacity: 1, y: 0, },
       hidden:  { opacity: 0, y: "50vh", } 
@@ -57,7 +61,7 @@ function SlideUpCardWhenVisible(props) {
     <>
       <motion.div
         animate={controls}
-        initial="hidden"
+        initial={shouldReduceMotion ? "visible" : "hidden"}
         transition={{
           type: "spring",
           stiffness: 50,
@@ -79,6 +83,8 @@ function SlideRightCardWhenVisible(props) {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
+  const shouldReduceMotion = useReducedMotion();
+
   const sideVariants = { 
       visible: { opacity: 1, x: 0, },
       hidden:  { opacity: 0, x: "-50vh", } 
@@ -94,7 +100,7 @@ function SlideRightCardWhenVisible(props) {
     <>
       <motion.div
         animate={controls}
-        initial="hidden"
+        initial={shouldReduceMotion ? "visible" : "hidden"}
         transition={{
           type: "spring",
           stiffness: 50,

@@ -15,7 +15,6 @@ import {
 } from "../components/effects/DisplayWhenVisible";
 
 export function Home(props) {
-
   let animIterSkills = 0;
   let animIterProjects = 0;
   let animIterReviews = 4;
