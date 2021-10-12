@@ -27,8 +27,7 @@ export function Reviews(props) {
         {/* Reviews */}
         <div id="reviews">
           <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
-            {
-              props.reviewInfo.map((review) => {
+            { props.reviewInfo.length > 0 && props.reviewInfo.map((review) => {
                 return (
                   <ReviewCard 
                     key={review.name}
@@ -41,6 +40,11 @@ export function Reviews(props) {
               })
             }
           </div>
+          { props.reviewInfo.length === 0 &&
+            <div className="text-red-500 ml-2 mt-2 md:mt-4 mb-8">
+              <p className="text-center text-3xl md:text-4xl">Geen reviews gevonden.</p>
+            </div>
+          }
         </div>
     </div>
   );
