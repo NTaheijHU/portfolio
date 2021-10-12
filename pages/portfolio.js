@@ -7,6 +7,7 @@ import {useReducedMotion, motion} from "framer-motion";
 import aboutInfo from '../data/about.json';
 import skillsInfo from '../data/skills.json';
 import projectInfo from '../data/projects.json';
+import { useEffect, useState } from "react";
 
 export function Portfolio(props) {
   const hero = {
@@ -18,6 +19,12 @@ export function Portfolio(props) {
  	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', origin: 0 } : { scale: 1.2, color: '#1d4ed8', origin: 0 };
 
   let iterProjects = 0;
+
+  const [skill, setSkill] = useState("All");
+
+  useEffect(() => {
+    console.log('Update');
+  }, [skill]);
 
   return (
     <div className="bg-gray-200 bg-opacity-60">
@@ -51,24 +58,24 @@ export function Portfolio(props) {
       <div id="projects">
         <div className="container mb-2 mt-4 md:mt-8 mx-auto px-2 md:px-4">
           <div className="grid grid-cols-2 md:grid-cols-8">
+            <a className="ml-2 mt-2 bg-gray-600 hover:bg-gray-600 text-gray-200 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
+              key="All"
+              id="selected"
+              onClick={(e) => {setSelectedSkill(e); setSkill("All")}}
+            >
+              All
+            </a>
             {
               props.skillsInfo.map((skill) => {
-                if(props.skillsInfo[0] === skill) {
-                  return (
-                    <a className="ml-2 mt-2 bg-gray-600 hover:bg-gray-600 text-gray-200 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
-                      key={skill.name}>
-                      {skill.name}
-                    </a>
-                  )
-                } else {
-                  return (
-                    <a className="ml-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
-                      key={skill.name}>
-                      {skill.name}
-                    </a>
-                  )
-                }
-
+                return (
+                  <a className="ml-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
+                    key={skill.name}
+                    id="selectable"
+                    onClick={(e) => {setSelectedSkill(e); setSkill(skill.name)}}
+                  >
+                    {skill.name}
+                  </a>
+                )
               })
             }
           </div>
@@ -76,43 +83,64 @@ export function Portfolio(props) {
         <div className="container mb-12 mx-auto px-2 md:px-4">
           {
             props.projectInfo.map((project) => {
-              iterProjects++;
-
-              if(iterProjects % 2 === 0) {
-                return (
-                  <ProjectCard
-                  key={project.name}
-                  image={project.image}
-                  title={project.name}
-                  link={project.link}
-                  mirrored={false}
-                  text={project.shortDescription}
-                  githubLink={project.githubLink}
-                  websiteLink={project.websiteLink}    
-                  skills={project.skills}
-                  />
-                )
-              } else {
-                return (
-                  <ProjectCard
-                  key={project.name}
-                  image={project.image}
-                  title={project.name}
-                  link={project.link}
-                  mirrored={true}
-                  text={project.shortDescription}
-                  githubLink={project.githubLink}
-                  websiteLink={project.websiteLink}
-                  skills={project.skills}
-                  />
-                )
+              if(project.skills.includes(skill.toUpperCase()) || skill === "All") {
+                iterProjects++;
+                if(iterProjects % 2 === 0) {
+                  return (
+                    <ProjectCard
+                    key={project.name}
+                    image={project.image}
+                    title={project.name}
+                    link={project.link}
+                    mirrored={false}
+                    text={project.shortDescription}
+                    githubLink={project.githubLink}
+                    websiteLink={project.websiteLink}    
+                    skills={project.skills}
+                    />
+                  )
+                } else {
+                  return (
+                    <ProjectCard
+                    key={project.name}
+                    image={project.image}
+                    title={project.name}
+                    link={project.link}
+                    mirrored={true}
+                    text={project.shortDescription}
+                    githubLink={project.githubLink}
+                    websiteLink={project.websiteLink}
+                    skills={project.skills}
+                    />
+                  )
+                }
               }
             })
+          }
+          { iterProjects === 0 &&
+            <div className="text-red-500 ml-2 mt-4 md:mt-8">
+              <p className="text-3xl md:text-4xl">Geen projecten gevonden.</p>
+            </div>
           }
         </div>
       </div>
     </div>
   );
+}
+
+function setSelectedSkill(button) {
+  const target = button.target;
+  if(target.id === "selected") return;
+
+  const selected =  document.getElementById("selected");
+
+  selected.id = "selectable";
+  selected.classList.remove(...['bg-gray-600', 'text-gray-200']);
+  selected.classList.add(...['bg-gray-300', 'text-gray-700']);
+
+  target.classList.remove(...['bg-gray-300', 'text-gray-700']);
+  target.classList.add(...['bg-gray-600', 'text-gray-200']);
+  target.id = "selected";
 }
 
 export async function getStaticProps() {
