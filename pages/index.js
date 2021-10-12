@@ -37,8 +37,13 @@ export function Home(props) {
         <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Skills</h1>
 
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
+          { props.skillsInfo.length == 0 &&
+              <div className="text-red-500 ml-2 mt-2 md:mt-4 mb-8">
+                <p className="text-center text-3xl md:text-4xl">Geen skills gevonden.</p>
+              </div>
+          }
           <div className="flex flex-wrap -mx-1 lg:-mx-4">
-          {
+          { props.skillsInfo.length > 0 &&
             props.skillsInfo.map((skill) => {
               animIterSkills++;
 
@@ -69,8 +74,13 @@ export function Home(props) {
         <br />
         <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Projecten</h1>
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
+          { props.projectInfo.length == 0 &&
+              <div className="text-red-500 ml-2 mt-2 md:mt-4 mb-8">
+                <p className="text-center text-3xl md:text-4xl">Geen projecten gevonden.</p>
+              </div>
+          }
           <div className="flex flex-wrap -mx-1 lg:-mx-4">
-            {
+            { props.projectInfo.length > 0 &&
               props.projectInfo.slice(0, 3).map((project) => {
                 animIterProjects++;
 
@@ -112,8 +122,13 @@ export function Home(props) {
         <br />
         <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Reviews</h1>
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
+            { props.reviewInfo.length == 0 &&
+              <div className="text-red-500 ml-2 mt-2 md:mt-4 mb-8">
+                <p className="text-center text-3xl md:text-4xl">Geen reviews gevonden.</p>
+              </div>
+            }
             <div className="flex flex-wrap -mx-1 lg:-mx-4">
-            {
+            { props.reviewInfo.length > 0 &&
               props.reviewInfo.slice(0, 4).map((review) => {
                 animIterReviews--;
                 return(
