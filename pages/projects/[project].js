@@ -62,12 +62,12 @@ export function Project(props) {
                   </div>
                   
                   <div className="no-underline text-grey-darker mr-4">
-                    <span className="hidden">Github</span>
+                    <span className="hidden">Commits</span>
                     <motion.i
                     whileHover= { animateIcon }
                     whileFocus= { animateIcon }
                     className="fas fa-code-branch fa-2x"></motion.i>
-                    <span className="ml-2 text-3xl text-gray-600">2</span>
+                    <span className="ml-2 text-3xl text-gray-600">{props.project.commits}</span>
                   </div>
                   
                 </div>
@@ -97,7 +97,9 @@ export function Project(props) {
               {
                 props.project.images.map((image) => {
                   return (
-                    <div>
+                    <div
+                      key={image["link"]}
+                    >
                       <img src={image["link"]} />
                       <p className="legend">{image["text"]}</p>
                     </div>

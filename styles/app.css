@@ -46,6 +46,10 @@ body {
   color: #db2777;
 }
 
+#selectable {
+  cursor: pointer;
+}
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;
