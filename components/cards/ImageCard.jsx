@@ -8,7 +8,8 @@ function ImageCard(props) {
               <p className="leading-normal text-xl">{props.text}</p>
           </div>
           <div className="lg:my-4 lg:mx-4 lg:col-span-1">
-            <img alt="Placeholder" src={props.image} />
+            <img alt="Placeholder" src={props.image} alt={props.alt ? props.alt : "Geen extra informatie beschikbaar."}/>
+
             <div>
               {props.children}
             </div>
