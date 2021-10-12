@@ -46,7 +46,7 @@ async function main() {
   const queryTime = Math.round(Math.random() * (300 - 200) + 100) + "";
   console.log('Query preperation time: '.blue + queryTime.green + 'μs'.cyan)
 
-  await executeQuery('about', 'About');
+  // await executeQuery('about', 'About');
   await executeQuery('skills', 'Skills');
   await executeQuery('projects', 'Projects');
   await executeQuery('reviews', 'Reviews');
@@ -58,21 +58,75 @@ async function executeQuery(query, name) {
   console.log('\n' +
       'Executing '.cyan + name.cyan + ' Query'.cyan);
   const projecTime = new Date();
-  await fetch(endpoint + '/' /* + query*/ )
+  
+  await fetch(endpoint + '/' + query )
     .then(res => res.json())
-    .then(data => {
-      const rawData = JSON.stringify(data);
+    .then(async fetchData => {
 
-      fs.writeFileSync(savePath + query + '.json', rawData, (err) => {
-          if (err) throw err;
-      });
+      let data = [];
 
-      const dataAmount = data.amount ? data.amount + "" : 0 + "";
+      if(query === 'projects') {
+        await fetchData.forEach(async project => {
+          await getCommits(project.githubLink).then(commits => {
+            project.commits = commits;
+            data.push(project);
+          });
+
+          if(data.length === fetchData.length) {
+            rawData = JSON.stringify(data);
+            writeData(query, rawData);
+          }
+        });
+      } else {
+        rawData = JSON.stringify(fetchData);
+        writeData(query, rawData);
+      }
+
+      const dataAmount = fetchData.length ? fetchData.length + "" : 0 + "";
+
       console.log(name.blue + ' Query Amount: '.blue + dataAmount.green);
-
+    
       const rTime = new Date().getTime() - projecTime.getTime() + "";
       console.log(name.blue + ' Query Execution Time: '.blue + rTime.green + 'ms'.cyan);
+  })
+}
+
+async function getCommits(link) {
+
+  const fetchLink = link.replace('https://github.com/', 'https://api.github.com/repos/');
+
+  let amount = 0;
+  let lastAmount = 100;
+  let page = 0;
+
+  while (lastAmount === 100) {
+    page++;
+    await fetch(fetchLink + '/commits' + '?per_page=100&page=' + page, {
+      headers: {
+        "User-Agent": "ntaheij",
+        // "Authorization": 'token ' + process.env.GITHUB_TOKEN
+      }
     })
+    .then(res => res.json())
+    .then(data => {
+      amount += data.length;
+      lastAmount = data.length;
+    })
+    .catch(err => {
+      if(savePath === './data/dev/') {
+        console.log(err);
+        return;
+      }
+    });
+  }
+
+  return amount;
+}
+
+function writeData(query, rawData) {
+  fs.writeFileSync(savePath + query + '.json', rawData, (err) => {
+    if (err) throw err;
+  });
 }
 
 async function getAPIStatus() {
