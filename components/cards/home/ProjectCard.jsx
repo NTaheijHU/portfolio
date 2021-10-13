@@ -38,7 +38,7 @@ export default function ProjectCard(props) {
               whileFocus= { animateHeart }
               className="fa fa-heart fa-2x"></motion.i>
             </a>
-
+          {props.githubLink &&
             <a className="no-underline text-grey-darker mr-2" href={props.githubLink} target="_blank">
               <span className="hidden">Github</span>
               <motion.i
@@ -46,7 +46,8 @@ export default function ProjectCard(props) {
               whileFocus= { animateIcon }
               className="fab fa-github fa-2x"></motion.i>
             </a>
-
+          }
+          {props.websiteLink &&
             <a className="no-underline text-grey-darker mr-2" href={props.websiteLink} target="_blank">
               <span className="hidden">Website</span>
               <motion.i
@@ -54,6 +55,7 @@ export default function ProjectCard(props) {
               whileFocus= { animateIcon }
               className="far fa-window-maximize fa-2x"></motion.i>
             </a>
+    }
           </div>
         </section>
       </article>
