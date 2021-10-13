@@ -8,22 +8,22 @@ export default function ProjectCard(props) {
 
   return(
     <div className="">
-      <article className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90">
+      <article className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 dark:bg-gray-700 dark:bg-opacity-100 dark:text-white">
         <a href="#">
           <img alt="Placeholder" className="block h-auto w-full" src={props.image} />
         </a>
         <header className="p-2 md:p-4 mt-2 md:mt-4">
-          <a className="no-underline text-black" href={props.link}>
+          <a className="no-underline text-black dark:text-gray-100" href={props.link}>
             <h1 className="text-4xl font-bold text-center">
                 {props.title}
             </h1>
           </a>
         </header>
         <section className="flex px-2 pb-4 md:px-4 md:pb-4">
-          <div className="no-underline text-black" href="#">
+          <div className="no-underline text-black dark:text-gray-100" href="#">
             <p className="text-md">
                 {props.text + " "}
-                <a className="no-underline hover:underline text-blue-700" href={props.link}>
+                <a className="no-underline hover:underline text-blue-700 dark:text-blue-500" href={props.link}>
                   Lees meer...
                 </a>
             </p>

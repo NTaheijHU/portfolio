@@ -28,7 +28,7 @@ export default function HeroHome() {
   return (
     <section className="bg-white custom-hero-image" style={{backgroundImage: `url("header.jpg")`}}>
       <div className="custom-hero h-screen">
-        <div className="max-w-full mx-auto xl:px-0 px-4 text-white font-semibold" style={styles.hero}>
+        <div className="max-w-full mx-auto xl:px-0 px-4 text-gray-100 font-semibold" style={styles.hero}>
           <div className="w-full my-16 lg:my-32 text-center">
             <motion.div             
               initial={animateDown}

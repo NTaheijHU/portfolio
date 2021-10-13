@@ -9,7 +9,7 @@ export default function ProjectCard(props) {
   if(!props.mirrored) {
     return(
       <article>
-        <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 mt-2 md:mt-4">
+        <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 dark:bg-gray-700 dark:bg-opacity-100 dark:text-gray-100 mt-2 md:mt-4">
           <div className="lg:relative m-0 lg:grid lg:grid-cols-3">
             <div className="p-6 lg:col-span-2">
                 <h2 className="uppercase font-medium text-4xl mb-3">{props.title}</h2>
@@ -23,7 +23,7 @@ export default function ProjectCard(props) {
                 <img alt="Placeholder" src={props.image} />
                 <section>
                   <div className="flex leading-tight p-2 md:p-4 ">
-                    <a className="no-underline text-grey-darker mr-2" href="#">
+                    <a className="no-underline text-grey-darker dark:text-gray-100 mr-2" href="#">
                       <span className="hidden">Like</span>
                       <motion.i
                       whileHover= { animateHeart }
@@ -31,7 +31,7 @@ export default function ProjectCard(props) {
                       className="fa fa-heart fa-2x" />
                     </a>
                     { props.githubLink &&
-                      <a className="no-underline text-grey-darker mr-2" href={props.githubLink} target="_blank">
+                      <a className="no-underline text-grey-darker dark:text-gray-100 mr-2" href={props.githubLink} target="_blank">
                         <span className="hidden">Github</span>
                         <motion.i
                         whileHover= { animateIcon }
@@ -40,7 +40,7 @@ export default function ProjectCard(props) {
                       </a>
                     }
                     { props.websiteLink &&
-                      <a className="no-underline text-grey-darker mr-2" href={props.websiteLink} target="_blank">
+                      <a className="no-underline text-grey-darker dark:text-gray-100 mr-2" href={props.websiteLink} target="_blank">
                         <span className="hidden">Website</span>
                         <motion.i
                         whileHover= { animateIcon }
@@ -51,7 +51,7 @@ export default function ProjectCard(props) {
                     {
                       props.skills.map((skill) => {
                         return (
-                          <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out"
+                          <a className="ml-2 bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100 dark:text-gray-100 font-semibold text-center text-md py-2 px-2 rounded-xl duration-200 ease-in-out"
                           key={skill}>
                             {skill}
                         </a>
@@ -68,7 +68,7 @@ export default function ProjectCard(props) {
   } else {
     return(
       <article>
-        <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 mt-2 md:mt-4">
+        <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 dark:bg-gray-700 dark:bg-opacity-100 dark:text-gray-100 mt-2 md:mt-4">
           <div className="lg:relative m-0 lg:grid lg:grid-cols-3 lg:grid-rows-1">
             <div className="lg:my-4 lg:mx-4">
               <img alt="Placeholder" src={props.image} />
@@ -77,13 +77,13 @@ export default function ProjectCard(props) {
             <div className="p-6 lg:col-span-2">
                 <h2 className="uppercase font-medium text-4xl mb-3">{props.title}</h2>
                 <p className="leading-normal text-xl">{props.text}&nbsp;
-                  <a className="no-underline hover:underline text-blue-700" href={props.link}>
+                  <a className="no-underline hover:underline text-blue-700 dark:text-blue-500" href={props.link}>
                     Lees meer...
                   </a>
                 </p>
                 <section>
                   <div className="flex leading-tight flex-wrap">
-                    <a className="no-underline text-grey-darker mr-2 pt-2 md:pt-4" href="#">
+                    <a className="no-underline text-grey-darker dark:text-gray-100 mr-2 pt-2 md:pt-4" href="#">
                       <span className="hidden">Like</span>
                       <motion.i
                       whileHover= { animateHeart }
@@ -91,7 +91,7 @@ export default function ProjectCard(props) {
                       className="fa fa-heart fa-2x"></motion.i>
                     </a>
                     { props.githubLink &&
-                      <a className="no-underline text-grey-darker mr-2 pt-2 md:pt-4" href={props.githubLink} target="_blank">
+                      <a className="no-underline text-grey-darker dark:text-gray-100 mr-2 pt-2 md:pt-4" href={props.githubLink} target="_blank">
                         <span className="hidden">Github</span>
                         <motion.i
                         whileHover= { animateIcon }
@@ -111,7 +111,7 @@ export default function ProjectCard(props) {
                     {
                       props.skills.map((skill) => {
                         return (
-                          <a className="mt-2 md:mt-4 mr-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out"
+                          <a className="mt-2 md:mt-4 mr-2 bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100 dark:text-gray-100 font-semibold text-center text-md py-2 px-2 rounded-xl duration-200 ease-in-out"
                           key={skill}>
                             {skill}
                         </a>

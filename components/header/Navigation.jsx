@@ -63,14 +63,14 @@ export default function Navigation() {
   return (
     <>
       {/* navigation */}
-      <nav className="bg-white shadow-sm py-6 text-gray-700 topbar">
+      <nav className="bg-white dark:bg-gray-700 shadow-sm py-6 text-gray-700 dark:text-white topbar">
         <div className="flex justify-between max-w-7xl mx-auto xl:px-0 px-4">
           <div className="order-last md:order-first flex items-center">
             <a href="/" role="button" aria-label="Home">
-              <h1 className="text-gray-900 text-3xl font-bold uppercase">{aboutInfo.name}</h1>
+              <h1 className="text-gray-900 dark:text-white text-3xl font-bold uppercase">{aboutInfo.name}</h1>
             </a>
           </div>
-          <div className="hidden md:flex items-center text-gray-500 text-md">
+          <div className="hidden md:flex items-center text-gray-500 dark:text-white text-md">
             {navItems.map((item) => {
               return (
                 <div key={item.id}>
@@ -79,7 +79,7 @@ export default function Navigation() {
               );
             })}
           </div>
-          <a className="flex md:hidden items-center text-gray-900 text-2xl">
+          <a className="flex md:hidden items-center text-gray-900 dark:text-white text-2xl">
             <i onClick={() => open(isOpen)} className="fas fa-bars"></i>
           </a>
         </div>
@@ -91,10 +91,10 @@ export default function Navigation() {
             animate={{ y: "10%" }}
             transition={{ duration: 0.3 }}
             exit={{ y: "-100%" }}
-            className="w-full shadow-sm fixed left-0 top-0 bg-white h-full flex flex-col items-center gap-8 text-xl p-8"
+            className="w-full shadow-sm fixed left-0 top-0 bg-white dark:bg-gray-700 h-full flex flex-col items-center gap-8 text-xl p-8"
             ref={node}
           >
-            <div className="text-2xl text-gray-900 absolute right-8">
+            <div className="text-2xl text-gray-900 dark:text-white absolute right-8">
               <i onClick={() => open(isOpen)} className="fas fa-times"></i>
             </div>
             {navItems.map((item) => {
