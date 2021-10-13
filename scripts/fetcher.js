@@ -66,7 +66,7 @@ async function executeQuery(query, name) {
     .then(async fetchData => {
 
       let data = [];
-      const dataAmount = data.length ? data.length + "" : 0 + "";
+      const dataAmount = fetchData.length ? fetchData.length + "" : 0 + "";
       console.log(name.blue + ' Query Amount: '.blue + dataAmount.green);
       if(query === 'projects') {
         await fetchData.forEach(async project => {
@@ -84,8 +84,6 @@ async function executeQuery(query, name) {
         rawData = JSON.stringify(fetchData);
         writeData(query, rawData);
       }
-
-      const dataAmount = fetchData.length ? fetchData.length + "" : 0 + "";
 
       console.log(name.blue + ' Query Amount: '.blue + dataAmount.green);
     
