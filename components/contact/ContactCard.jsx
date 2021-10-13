@@ -33,7 +33,6 @@ function ContactCard(props) {
       }
 
       captchaRef.current.resetCaptcha();
-      setToken(null);
     });
   
     return true;
