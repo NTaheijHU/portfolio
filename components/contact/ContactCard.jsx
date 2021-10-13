@@ -1,4 +1,46 @@
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { useRef, useState } from "react";
+
 function ContactCard(props) {
+  const [token, setToken] = useState(null);
+  const captchaRef = useRef(null);
+
+  const handleEmail = async () => {
+    console.log(token);
+    await fetch('http://localhost:5000' + '/mail', {
+      method: 'POST',
+      headers: {
+        'User-Agent': 'NTaheij Mailer',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        message: document.getElementById('message').value,
+        token: token
+      })
+    }).then((response) => {
+      if (response.status === 201) {
+        alert('Bericht verzonden');
+  
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('message').value = '';
+  
+        captchaRef.current.resetCaptcha();
+        setToken(null);
+      } else {
+        alert('Er is iets fout gegaan');
+      }
+    }).catch((error) => {
+      alert('Er is iets fout gegaan');
+    });
+  
+    return true;
+  }
+
   return ( 
     <div>
       <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 mt-2 md:mt-4">
@@ -24,10 +66,17 @@ function ContactCard(props) {
                     <textarea id="message" onChange={ handleMessageChange } maxLength="2000" className="resize-none rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border-light-blue-400 w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56 border-red-500" placeholder="Bericht" required></textarea>
                     <p id="message-max" className="text-xl mt-2 mb-0">Karakters: 0/2000</p>
                   </div>
-                  <div className="p-3 pt-4">
-                  <button type="button" onClick={ handleEmail } className="w-full bg-gray-700 hover:bg-gray-900 text-white font-bold py-3 px-4 rounded text-2xl">
-                    Send
-                  </button>
+                  <div className="p-3 pt-2">
+                  <HCaptcha
+                    sitekey="19dfcbb1-b179-4c73-8a56-46a2cb26dea9"
+                    onVerify={(token,ekey) => { setToken(token); handleEmail(); }}
+                    ref={captchaRef}
+                  />
+                  {/* { token &&
+                    <button type="button" onClick={ handleEmail } className="w-full bg-gray-700 hover:bg-gray-900 text-white font-bold py-3 px-4 mt-4 rounded text-2xl">
+                      Send
+                    </button>
+                  } */}
                   </div>
                 </form>
               </div>
@@ -36,38 +85,6 @@ function ContactCard(props) {
       </section>
     </div>
    );
-}
-
-async function handleEmail(e) {
-  e.preventDefault(); 
-  await fetch('http://localhost:5000' + '/mail', {
-    method: 'POST',
-    headers: {
-      'User-Agent': 'NTaheij Mailer',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      phone: document.getElementById('phone').value,
-      message: document.getElementById('message').value
-    })
-  }).then((response) => {
-    if (response.status === 201) {
-      alert('Bericht verzonden');
-
-      document.getElementById('name').value = '';
-      document.getElementById('email').value = '';
-      document.getElementById('phone').value = '';
-      document.getElementById('message').value = '';
-    } else {
-      alert('Er is iets fout gegaan');
-    }
-  }).catch((error) => {
-    alert('Er is iets fout gegaan');
-  });
-
-  return true;
 }
 
 function handleNameChange(event) {
