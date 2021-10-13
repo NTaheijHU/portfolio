@@ -38,13 +38,13 @@ export function Portfolio(props) {
         <br />
         <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
             <ImageCard
-              title={props.aboutInfo.projects.title}
-              text={props.aboutInfo.projects.details}
-              image={props.aboutInfo.projects.image}
+              title={props.aboutInfo.projectsTitle}
+              text={props.aboutInfo.projectsText}
+              image={props.aboutInfo.projectsImage}
             >
               <section>
                 <div className="flex leading-tight p-2 md:p-4">
-                  <a className="no-underline text-grey-darker mr-2" href={props.aboutInfo.projects.githubLink}>
+                  <a className="no-underline text-grey-darker mr-2" href={props.aboutInfo.githubLink}>
                     <span className="hidden">Github</span>
                     <motion.i
                     whileHover= { animateIcon }
