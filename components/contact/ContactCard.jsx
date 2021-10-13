@@ -17,19 +17,18 @@ function ContactCard(props) {
 
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   
-    if ( re.test(email) ) {
+    if (!re.test(email) ) {
       return alert("Het bericht is niet verzonden, het email adres is niet correct.");
     }
 
     let reP = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
   
-    if ( reP.test(phone) ) {
+    if (!reP.test(phone) ) {
       return alert("Het bericht is niet verzonden, het telefoonnummer is niet correct.");
     }
 
     if(message.length > 2000) {
       return alert("Het bericht is niet verzonden, het bericht is te lang.");
-      return;
     }
 
 
