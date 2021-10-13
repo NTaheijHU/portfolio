@@ -50,10 +50,10 @@ function ContactCard(props) {
       if (response.status === 201) {
         alert('Bericht verzonden');
   
-        name.value = '';
-        email.value = '';
-        phone.value = '';
-        message.value = '';
+        name = '';
+        email = '';
+        phone = '';
+        message = '';
       } else {
         alert('Er is iets fout gegaan');
       }
