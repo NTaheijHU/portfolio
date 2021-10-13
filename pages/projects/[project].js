@@ -38,6 +38,7 @@ export function Project(props) {
             >
               <section>
                 <div className="flex leading-tight p-2 md:p-4">
+                { props.project.githubLink &&
                   <a className="no-underline text-grey-darker mr-2" href={props.project.githubLink}>
                     <span className="hidden">Github</span>
                     <motion.i
@@ -45,6 +46,8 @@ export function Project(props) {
                     whileFocus= { animateIcon }
                     className="fab fa-github fa-2x"></motion.i>
                   </a>
+                }
+                { props.project.websiteLink &&
                   <a className="no-underline text-grey-darker mr-2" href={props.project.websiteLink}>
                     <span className="hidden">Website</span>
                     <motion.i
@@ -52,6 +55,7 @@ export function Project(props) {
                     whileFocus= { animateIcon }
                     className="far fa-window-maximize fa-2x"></motion.i>
                   </a>
+  }
                   <div className="no-underline text-grey-darker mr-4">
                     <span className="hidden">Like</span>
                     <motion.i
@@ -60,7 +64,7 @@ export function Project(props) {
                     className="fa fa-heart fa-2x"></motion.i>
                     <span className="ml-2 text-3xl text-gray-600">2</span>
                   </div>
-                  
+                { props.project.commits &&
                   <div className="no-underline text-grey-darker mr-4">
                     <span className="hidden">Commits</span>
                     <motion.i
@@ -69,7 +73,7 @@ export function Project(props) {
                     className="fas fa-code-branch fa-2x"></motion.i>
                     <span className="ml-2 text-3xl text-gray-600">{props.project.commits}</span>
                   </div>
-                  
+                }
                 </div>
                 <div className="flex leading-tight py-2 pl-0 md:pl-2 md:py-0">
                   {
