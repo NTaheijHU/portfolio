@@ -2,12 +2,11 @@ import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { useRef, useState } from "react";
 
 function ContactCard(props) {
-  const [token, setToken] = useState(null);
   const captchaRef = useRef(null);
 
-  const handleEmail = async () => {
-    console.log(token);
-    await fetch('http://localhost:5000' + '/mail', {
+  const handleEmail = async (token) => {
+
+    await fetch('http://dev.local:5000' + '/mail', {
       method: 'POST',
       headers: {
         'User-Agent': 'NTaheij Mailer',
@@ -21,6 +20,7 @@ function ContactCard(props) {
         token: token
       })
     }).then((response) => {
+      console.log(response);
       if (response.status === 201) {
         alert('Bericht verzonden');
   
@@ -28,14 +28,12 @@ function ContactCard(props) {
         document.getElementById('email').value = '';
         document.getElementById('phone').value = '';
         document.getElementById('message').value = '';
-  
-        captchaRef.current.resetCaptcha();
-        setToken(null);
       } else {
         alert('Er is iets fout gegaan');
       }
-    }).catch((error) => {
-      alert('Er is iets fout gegaan');
+
+      captchaRef.current.resetCaptcha();
+      setToken(null);
     });
   
     return true;
@@ -69,7 +67,7 @@ function ContactCard(props) {
                   <div className="p-3 pt-2">
                   <HCaptcha
                     sitekey="19dfcbb1-b179-4c73-8a56-46a2cb26dea9"
-                    onVerify={(token,ekey) => { setToken(token); handleEmail(); }}
+                    onVerify={ (token) => { handleEmail(token); }}
                     ref={captchaRef}
                   />
                   {/* { token &&
