@@ -6,6 +6,32 @@ function ContactCard(props) {
 
   const handleEmail = async (token) => {
 
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let message = document.getElementById('message').value;
+
+    if(name.length < 5 || name.length > 50) {
+      return;
+    }
+
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  
+    if ( re.test(email) ) {
+      return;
+    }
+
+    let reP = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+  
+    if ( reP.test(phone) ) {
+      return;
+    }
+
+    if(message.length > 2000) {
+      return;
+    }
+
+
     await fetch('http://dev.local:5000' + '/mail', {
       method: 'POST',
       headers: {
@@ -13,10 +39,10 @@ function ContactCard(props) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        message: document.getElementById('message').value,
+        name,
+        email,
+        phone,
+        message,
         token: token
       })
     }).then((response) => {
@@ -24,10 +50,10 @@ function ContactCard(props) {
       if (response.status === 201) {
         alert('Bericht verzonden');
   
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('phone').value = '';
-        document.getElementById('message').value = '';
+        name.value = '';
+        email.value = '';
+        phone.value = '';
+        message.value = '';
       } else {
         alert('Er is iets fout gegaan');
       }
@@ -48,19 +74,22 @@ function ContactCard(props) {
                 <form className="w-full">
                   <div className="p-3">
                     <label htmlFor="name">Naam</label>
-                    <input id="name" onChange={ handleNameChange } maxLength="50" className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-4 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 border-red-500" type="text" placeholder="Naam" required />
+                    <input id="name" onChange={ handleNameChange } maxLength="49" className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-2 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Naam" required />
+                    <p id="nameHint" className="text-red-700 ml-1"></p>
                   </div>
                   <div className="p-3">
                     <label htmlFor="email">Email</label>
-                    <input id="email" onChange={ handleEmailChange } className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-4 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 border-red-500" type="email" placeholder="Email Adres" required />
+                    <input id="email" onChange={ handleEmailChange } className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-2 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="email" placeholder="Email" required />
+                    <p id="emailHint" className="text-red-700 ml-1"></p>
                   </div>
                   <div className="p-3">
                     	<label htmlFor="phone">Telefoonnummer</label>
-                    <input id="phone" onChange={ handlePhoneChange } className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-4 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 border-red-500" type="text" placeholder="Telefoon Nummer" />
+                    <input id="phone" onChange={ handlePhoneChange } className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-2 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Telefoonnummer" />
+                    <p id="phoneHint" className="text-red-700 ml-1"></p>
                   </div>
                   <div className="p-3">
                     <label htmlFor="message">Bericht</label>
-                    <textarea id="message" onChange={ handleMessageChange } maxLength="2000" className="resize-none rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border-light-blue-400 w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56 border-red-500" placeholder="Bericht" required></textarea>
+                    <textarea id="message" onChange={ handleMessageChange } maxLength="2000" className="resize-none rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border-light-blue-400 w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56" placeholder="Bericht" required></textarea>
                     <p id="message-max" className="text-xl mt-2 mb-0">Karakters: 0/2000</p>
                   </div>
                   <div className="p-3 pt-2">
@@ -69,11 +98,6 @@ function ContactCard(props) {
                     onVerify={ (token) => { handleEmail(token); }}
                     ref={captchaRef}
                   />
-                  {/* { token &&
-                    <button type="button" onClick={ handleEmail } className="w-full bg-gray-700 hover:bg-gray-900 text-white font-bold py-3 px-4 mt-4 rounded text-2xl">
-                      Send
-                    </button>
-                  } */}
                   </div>
                 </form>
               </div>
@@ -87,11 +111,13 @@ function ContactCard(props) {
 function handleNameChange(event) {
   let name = event.target.value;
 
-  if ( name.length > 4 && name.length < 50 ) {
+  if ( name.length > 5 && name.length < 50 ) {
     event.target.classList.remove('border-red-500');
+    document.getElementById('nameHint').innerText = '';
   }
   else {
     event.target.classList.add('border-red-500');
+    document.getElementById('nameHint').innerText = 'Naam moet tussen de 5 en 50 karakters zijn.';
   }
 }
 
@@ -101,9 +127,11 @@ function handleEmailChange(event) {
 
   if ( re.test(email) ) {
     event.target.classList.remove('border-red-500');
+    document.getElementById('emailHint').innerText = '';
   }
   else {
     event.target.classList.add('border-red-500');
+    document.getElementById('emailHint').innerText = 'Email adres moet geldig zijn.';
   }
 }
 
@@ -113,15 +141,23 @@ function handlePhoneChange(event) {
 
   if ( re.test(email) ) {
     event.target.classList.remove('border-red-500');
+    document.getElementById('phoneHint').innerText = '';
   }
   else {
     event.target.classList.add('border-red-500');
+    document.getElementById('phoneHint').innerText = 'Telefoon nummer moet geldig zijn.';
   }
 }
 
 function handleMessageChange(event) {
   let message = event.target.value;
   let messageLength = message.length;
+
+  document.getElementById('message-max').classList.remove('text-red-700');
+
+  if(messageLength > 1999) {
+    document.getElementById('message-max').classList.add('text-red-700');
+  }
 
   if(messageLength > 2000) {
     event.target.value = message.slice(0, 2000-1);
