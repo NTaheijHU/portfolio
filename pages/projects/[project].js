@@ -55,7 +55,7 @@ export function Project(props) {
                     whileFocus= { animateIcon }
                     className="far fa-window-maximize fa-2x"></motion.i>
                   </a>
-  }
+                }
                   <div className="no-underline text-grey-darker mr-4">
                     <span className="hidden">Like</span>
                     <motion.i

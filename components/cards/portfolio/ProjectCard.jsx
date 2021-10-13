@@ -30,22 +30,24 @@ export default function ProjectCard(props) {
                       whileFocus= { animateHeart }
                       className="fa fa-heart fa-2x" />
                     </a>
-    
-                    <a className="no-underline text-grey-darker mr-2" href={props.githubLink} target="_blank">
-                      <span className="hidden">Github</span>
-                      <motion.i
-                      whileHover= { animateIcon }
-                      whileFocus= { animateIcon }
-                      className="fab fa-github fa-2x" />
-                    </a>
-    
-                    <a className="no-underline text-grey-darker mr-2" href={props.websiteLink} target="_blank">
-                      <span className="hidden">Website</span>
-                      <motion.i
-                      whileHover= { animateIcon }
-                      whileFocus= { animateIcon }
-                      className="far fa-window-maximize fa-2x" />
-                    </a>
+                    { props.githubLink &&
+                      <a className="no-underline text-grey-darker mr-2" href={props.githubLink} target="_blank">
+                        <span className="hidden">Github</span>
+                        <motion.i
+                        whileHover= { animateIcon }
+                        whileFocus= { animateIcon }
+                        className="fab fa-github fa-2x" />
+                      </a>
+                    }
+                    { props.websiteLink &&
+                      <a className="no-underline text-grey-darker mr-2" href={props.websiteLink} target="_blank">
+                        <span className="hidden">Website</span>
+                        <motion.i
+                        whileHover= { animateIcon }
+                        whileFocus= { animateIcon }
+                        className="far fa-window-maximize fa-2x" />
+                      </a>
+                    }
                     {
                       props.skills.map((skill) => {
                         return (
@@ -70,43 +72,7 @@ export default function ProjectCard(props) {
           <div className="lg:relative m-0 lg:grid lg:grid-cols-3 lg:grid-rows-1">
             <div className="lg:my-4 lg:mx-4">
               <img alt="Placeholder" src={props.image} />
-                <section>
-                  <div className="flex leading-tight p-2 md:p-4 ">
-                    <a className="no-underline text-grey-darker mr-2" href="#">
-                      <span className="hidden">Like</span>
-                      <motion.i
-                      whileHover= { animateHeart }
-                      whileFocus= { animateHeart }
-                      className="fa fa-heart fa-2x"></motion.i>
-                    </a>
-    
-                    <a className="no-underline text-grey-darker mr-2" href={props.githubLink} target="_blank">
-                      <span className="hidden">Github</span>
-                      <motion.i
-                      whileHover= { animateIcon }
-                      whileFocus= { animateIcon }
-                      className="fab fa-github fa-2x"></motion.i>
-                    </a>
-    
-                    <a className="no-underline text-grey-darker mr-2" href={props.websiteLink} target="_blank">
-                      <span className="hidden">Website</span>
-                      <motion.i
-                      whileHover= { animateIcon }
-                      whileFocus= { animateIcon }
-                      className="far fa-window-maximize fa-2x"></motion.i>
-                    </a>
-                    {
-                      props.skills.map((skill) => {
-                        return (
-                          <a className="ml-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out"
-                          key={skill}>
-                            {skill}
-                        </a>
-                        )
-                      })
-                    }
-                  </div>
-                </section>
+                
             </div>
             <div className="p-6 lg:col-span-2">
                 <h2 className="uppercase font-medium text-4xl mb-3">{props.title}</h2>
@@ -115,6 +81,45 @@ export default function ProjectCard(props) {
                     Lees meer...
                   </a>
                 </p>
+                <section>
+                  <div className="flex leading-tight flex-wrap">
+                    <a className="no-underline text-grey-darker mr-2 pt-2 md:pt-4" href="#">
+                      <span className="hidden">Like</span>
+                      <motion.i
+                      whileHover= { animateHeart }
+                      whileFocus= { animateHeart }
+                      className="fa fa-heart fa-2x"></motion.i>
+                    </a>
+                    { props.githubLink &&
+                      <a className="no-underline text-grey-darker mr-2 pt-2 md:pt-4" href={props.githubLink} target="_blank">
+                        <span className="hidden">Github</span>
+                        <motion.i
+                        whileHover= { animateIcon }
+                        whileFocus= { animateIcon }
+                        className="fab fa-github fa-2x" />
+                      </a>
+                    }
+                    { props.websiteLink &&
+                      <a className="no-underline text-grey-darker mr-2 pt-2 md:pt-4" href={props.websiteLink} target="_blank">
+                        <span className="hidden">Website</span>
+                        <motion.i
+                        whileHover= { animateIcon }
+                        whileFocus= { animateIcon }
+                        className="far fa-window-maximize fa-2x" />
+                      </a>
+                    }
+                    {
+                      props.skills.map((skill) => {
+                        return (
+                          <a className="mt-2 md:mt-4 mr-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-1 px-2 rounded-xl duration-200 ease-in-out"
+                          key={skill}>
+                            {skill}
+                        </a>
+                        )
+                      })
+                    }
+                  </div>
+                </section>
             </div>
           </div>
         </section>
