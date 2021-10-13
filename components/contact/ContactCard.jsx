@@ -63,6 +63,8 @@ async function handleEmail(e) {
     } else {
       alert('Er is iets fout gegaan');
     }
+  }).catch((error) => {
+    alert('Er is iets fout gegaan');
   });
 
   return true;
