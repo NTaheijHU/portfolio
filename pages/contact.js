@@ -8,7 +8,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-gray-200 bg-opacity-60">
+    <div className="bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100">
       <Hero hero={hero} />
 
       {/* Contact */}

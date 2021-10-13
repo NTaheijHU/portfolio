@@ -18,13 +18,13 @@ export default function Hero({ hero }) {
   }
 
   return (
-    <section style={styles.hero} className="bg-blue-500">
+    <section style={styles.hero} className="bg-blue-500 dark:bg-blue-900">
       <div className="py-12 px-4 lg:px-0 mx-auto max-w-7xl text-center">
         <motion.h1
           initial={{ y: "-300%" }}
           animate={{ y: "0%" }}
           transition={{ duration: 0.8 }}
-          className="text-6xl font-semibold text-white">
+          className="text-6xl font-semibold text-gray-100">
             { hero.title }
         </motion.h1>
       </div>

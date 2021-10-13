@@ -24,7 +24,7 @@ export function Project(props) {
 	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', origin: 0 } : { scale: 1.2, color: '#1d4ed8', origin: 0 };
  
   return (
-    <div className="bg-gray-200 bg-opacity-60">
+    <div className="bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100">
       <Hero hero={hero} />
 
       {/* Project */}
@@ -62,7 +62,7 @@ export function Project(props) {
                     whileHover= { animateHeart }
                     whileFocus= { animateHeart }
                     className="fa fa-heart fa-2x"></motion.i>
-                    <span className="ml-2 text-3xl text-gray-600">2</span>
+                    <span className="ml-2 text-3xl text-gray-600 dark:text-gray-300">2</span>
                   </div>
                 { props.project.commits &&
                   <div className="no-underline text-grey-darker mr-4">
@@ -71,15 +71,15 @@ export function Project(props) {
                     whileHover= { animateIcon }
                     whileFocus= { animateIcon }
                     className="fas fa-code-branch fa-2x"></motion.i>
-                    <span className="ml-2 text-3xl text-gray-600">{props.project.commits}</span>
+                    <span className="ml-2 text-3xl text-gray-600 dark:text-gray-300">{props.project.commits}</span>
                   </div>
                 }
                 </div>
-                <div className="flex leading-tight py-2 pl-0 md:pl-2 md:py-0">
+                <div className="flex leading-tight flex-wrap py-2 pl-0 md:pl-2 md:py-0">
                   {
                     props.project.skills.map((skill) => {
                       return (
-                        <a className="ml-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
+                        <a className="ml-2 mt-1 bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100 dark:text-gray-100 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
                           key={skill}>
                           {skill}
                         </a>

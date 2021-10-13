@@ -66,46 +66,53 @@ function ContactCard(props) {
 
   return ( 
     <div>
-      <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 mt-2 md:mt-4">
+      <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 dark:bg-gray-700 dark:bg-opacity-100 dark:text-gray-100 mt-2 md:mt-4">
         <div className="lg:relative m-0">
             <div className="lg:my-4 lg:mx-4">
               <h2 className="uppercase font-medium text-3xl lg:text-4xl mb-3">{props.title}</h2>
-              <div className="flex justify-center mx-auto bg-gray-200 rounded-lg shadow-lg">
-                <form className="w-full">
-                  <div className="p-3">
-                    <label htmlFor="name">Naam</label>
-                    <input id="name" onChange={ handleNameChange } maxLength="49" className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-2 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Naam" required />
-                    <p id="nameHint" className="text-red-700 ml-1"></p>
-                  </div>
-                  <div className="p-3">
-                    <label htmlFor="email">Email</label>
-                    <input id="email" onChange={ handleEmailChange } className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-2 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="email" placeholder="Email" required />
-                    <p id="emailHint" className="text-red-700 ml-1"></p>
-                  </div>
-                  <div className="p-3">
-                    	<label htmlFor="phone">Telefoonnummer</label>
-                    <input id="phone" onChange={ handlePhoneChange } className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-2 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Telefoonnummer" />
-                    <p id="phoneHint" className="text-red-700 ml-1"></p>
-                  </div>
-                  <div className="p-3">
-                    <label htmlFor="message">Bericht</label>
-                    <textarea id="message" onChange={ handleMessageChange } maxLength="2000" className="resize-none rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border-light-blue-400 w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56" placeholder="Bericht" required></textarea>
-                    <p id="message-max" className="text-xl mt-2 mb-0">Karakters: 0/2000</p>
-                  </div>
-                  <div className="p-3 pt-2">
-                  <HCaptcha
-                    sitekey="19dfcbb1-b179-4c73-8a56-46a2cb26dea9"
-                    onVerify={ (token) => { handleEmail(token); }}
-                    ref={captchaRef}
-                  />
-                  </div>
-                </form>
-              </div>
+              <form className="w-full">
+                <div className="p-3">
+                  <label htmlFor="name">Naam</label>
+                  <input id="name" onChange={ handleNameChange } maxLength="49" className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-2 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 dark:bg-gray-300 dark:border-gray-400 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Naam" required />
+                  <p id="nameHint" className="text-red-700 ml-1"></p>
+                </div>
+                <div className="p-3">
+                  <label htmlFor="email">Email</label>
+                  <input id="email" onChange={ handleEmailChange } className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-2 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 dark:bg-gray-300 dark:border-gray-400 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="email" placeholder="Email" required />
+                  <p id="emailHint" className="text-red-700 ml-1"></p>
+                </div>
+                <div className="p-3">
+                    <label htmlFor="phone">Telefoonnummer</label>
+                  <input id="phone" onChange={ handlePhoneChange } className="block appearance-none placeholder-gray-500 placeholder-opacity-100 border-2 border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 dark:bg-gray-300 dark:border-gray-400 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Telefoonnummer" />
+                  <p id="phoneHint" className="text-red-700 ml-1"></p>
+                </div>
+                <div className="p-3">
+                  <label htmlFor="message">Bericht</label>
+                  <textarea id="message" onChange={ handleMessageChange } maxLength="2000" className="resize-none rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border-light-blue-400 w-full dark:bg-gray-300 dark:border-gray-400 py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56" placeholder="Bericht" required></textarea>
+                  <p id="message-max" className="text-xl mt-2 mb-0">Karakters: 0/2000</p>
+                </div>
+                <div className="p-3 pt-2">
+                <HCaptcha
+                  theme={checkDarkMode() ? "dark" : "light"}
+                  sitekey="19dfcbb1-b179-4c73-8a56-46a2cb26dea9"
+                  onVerify={ (token) => { handleEmail(token); }}
+                  ref={captchaRef}
+                />
+                </div>
+              </form>
           </div>
         </div>
       </section>
     </div>
    );
+}
+
+function checkDarkMode() {
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function handleNameChange(event) {

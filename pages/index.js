@@ -20,7 +20,7 @@ export function Home(props) {
   let animIterReviews = 4;
 
   return (
-    <div className="bg-gray-200 bg-opacity-60">
+    <div className="bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100">
       <HeroHome />
       {/* About Me */}
       <div id="about-me">

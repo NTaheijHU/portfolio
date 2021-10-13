@@ -30,7 +30,7 @@ export function Portfolio(props) {
   }, [skill]);
 
   return (
-    <div className="bg-gray-200 bg-opacity-60">
+    <div className="bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100">
       <Hero hero={hero} />
 
       {/* Portfolio */}
@@ -61,7 +61,7 @@ export function Portfolio(props) {
       <div id="projects">
         <div className="container mb-2 mt-4 md:mt-8 mx-auto px-2 md:px-4">
           <div className="grid grid-cols-2 md:grid-cols-8">
-            <a className="ml-2 mt-2 bg-gray-600 hover:bg-gray-600 text-gray-200 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
+            <a className="ml-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 dark:bg-gray-600 dark:hover:gray-200 dark:text-gray-100 dark:hover:text-gray-300 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
               key="All"
               id="selected"
               onClick={(e) => {setSelectedSkill(e); setSkill("All")}}
@@ -71,7 +71,7 @@ export function Portfolio(props) {
             {
               props.skillsInfo.map((skill) => {
                 return (
-                  <a className="ml-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
+                  <a className="ml-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 dark:bg-gray-700 dark:hover:gray-200 dark:text-gray-100 dark:hover:text-gray-300 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
                     key={skill.name}
                     id="selectable"
                     onClick={(e) => {setSelectedSkill(e); setSkill(skill.name)}}
@@ -143,9 +143,9 @@ function setSelectedSkillForElement(id) {
 
   selected.id = "selectable";
   selected.classList.remove(...['bg-gray-600', 'text-gray-200']);
-  selected.classList.add(...['bg-gray-300', 'text-gray-700']);
+  selected.classList.add(...['bg-gray-300', 'text-gray-700', 'dark:bg-gray-700', 'dark:text-gray-100']);
 
-  target.classList.remove(...['bg-gray-300', 'text-gray-700']);
+  target.classList.remove(...['bg-gray-300', 'text-gray-700', 'dark:bg-gray-700', 'dark:text-gray-100']);
   target.classList.add(...['bg-gray-600', 'text-gray-200']);
   target.id = "selected";
 }

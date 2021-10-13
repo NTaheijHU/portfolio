@@ -73,6 +73,12 @@ body {
   transform-origin: bottom left;
 }
 
+@media (prefers-color-scheme: dark) {
+  .hover-underline-animation:after {
+    background-color: #577de6d0;
+  }
+}
+
 @media (max-width: 639px) {
   .footer-panel:not(:first-child) {
     margin-top: 1rem;
