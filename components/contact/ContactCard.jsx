@@ -1,8 +1,18 @@
 import HCaptcha from "@hcaptcha/react-hcaptcha";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function ContactCard(props) {
   const captchaRef = useRef(null);
+
+  const [dark, setDark] = useState("light");
+
+  useEffect(() => {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      setDark("dark");
+    } else {
+      setDark("light");
+    }
+  })
 
   const handleEmail = async (token) => {
 
@@ -93,7 +103,7 @@ function ContactCard(props) {
                 </div>
                 <div className="p-3 pt-2">
                 <HCaptcha
-                  theme={checkDarkMode() ? "dark" : "light"}
+                  theme={dark}
                   sitekey="19dfcbb1-b179-4c73-8a56-46a2cb26dea9"
                   onVerify={ (token) => { handleEmail(token); }}
                   ref={captchaRef}
@@ -105,14 +115,6 @@ function ContactCard(props) {
       </section>
     </div>
    );
-}
-
-function checkDarkMode() {
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    return true;
-  } else {
-    return false;
-  }
 }
 
 function handleNameChange(event) {
