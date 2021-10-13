@@ -64,7 +64,6 @@ async function executeQuery(query, name) {
   await fetch(endpoint + '/' + query )
     .then(res => res.json())
     .then(async fetchData => {
-
       let data = [];
       const dataAmount = fetchData.length ? fetchData.length + "" : 0 + "";
       console.log(name.blue + ' Query Amount: '.blue + dataAmount.green);
@@ -81,6 +80,7 @@ async function executeQuery(query, name) {
           }
         });
       } else {
+        console.log(fetchData);
         rawData = JSON.stringify(fetchData);
         writeData(query, rawData);
       }
