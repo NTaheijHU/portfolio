@@ -13,11 +13,7 @@ import { useEffect } from "react";
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
+    goDark();
   });
 
   return (
@@ -35,8 +31,44 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
         <Footer />
       </div>
+
+      {/* Dark Mode Button */}
+      <div className="dark-mode">
+            <button onClick={goDark} role="button" id="toggle-dark" className="dark-mode">
+                <i className="fas fa-sun fa-2x" id="toggle-dark-icon"></i>
+            </button>
+        </div>
     </>
   );
+}
+
+function goDark() {
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+    localStorage.theme = 'light';
+  } else {
+    document.documentElement.classList.remove('dark');
+    localStorage.theme = 'dark';
+  }
+
+  switchDarkClasses();
+}
+
+function switchDarkClasses() {
+  var root = document.querySelector(':root');
+  var rootLight = getComputedStyle(root).getPropertyValue('--light');
+  var rootDark = getComputedStyle(root).getPropertyValue('--dark');
+
+  var toggleDarkModeIcon = document.getElementById('toggle-dark-icon');
+
+  root.style.setProperty('--light', rootDark);
+  root.style.setProperty('--dark', rootLight);
+
+  if(rootDark == getComputedStyle(root).getPropertyValue('--alwaysLight')) {
+    toggleDarkModeIcon.className = "fas fa-moon fa-2x";
+  } else {
+      toggleDarkModeIcon.className = "fas fa-sun fa-2x";
+  }
 }
 
 export default MyApp;

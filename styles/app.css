@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
+/* General */
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -50,6 +52,8 @@ body {
   cursor: pointer;
 }
 
+/* Underline */
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -92,5 +96,69 @@ body {
 @media (max-width: 767px) {
   .flex-custom-row:nth-child(even) {
     flex-direction: column;
+  }
+}
+
+/* Dark Mode */
+
+:root {
+  --alwaysLight: #f6f6f6;
+  --light: #f6f6f6;
+  --dark: #2c2c2c;
+}
+
+.dark-mode {
+  cursor: pointer;
+  position: fixed;
+  bottom: 2%;
+  right: 1%;
+  z-index: 10;
+}
+
+.dark-mode .dark-mode {
+  background-color: var(--light);
+  border: none;
+  border-radius: 50%;
+  color: var(--dark);
+  padding: 15px 15px;
+  text-align: center;
+  display: inline-block;
+}
+
+@media only screen and (min-width: 1024px) {
+  .dark-mode {
+    bottom: 2%;
+    right: -1.5%;
+    z-index: 10;
+
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+
+  .dark-mode:hover {
+    transition-timing-function: ease-out;
+    transform: translateX(-20px);
+  }
+
+  .dark-mode i {
+    transform: scaleX(-1);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .dark-mode {
+    -webkit-transition: 0s;
+    -moz-transition: 0s;
+    -o-transition: 0s;
+    transition: 0s;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark-mode .dark-mode {
+    background-color: var(--dark);
+    color: var(--light);
   }
 }
