@@ -28,9 +28,9 @@ export default function LinkFooter() {
             {
               projectInfo.slice(0, 3).map((project) => {
                 return (
-                  <Link href={project.link}><a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out"
-                  key={project.name}
-                  >{project.name}</a></Link>
+                  <Link href={project.link} key={project.name}>
+                    <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out">{project.name}</a>
+                  </Link>
                 )
               })
             }
