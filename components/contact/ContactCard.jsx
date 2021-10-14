@@ -46,7 +46,7 @@ function ContactCard(props) {
     }
 
 
-    await fetch('http://dev.local:5000' + '/mail', {
+    await fetch(props.endpoint + '/mail', {
       method: 'POST',
       headers: {
         'User-Agent': 'NTaheij Mailer',
