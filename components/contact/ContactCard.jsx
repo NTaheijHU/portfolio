@@ -173,7 +173,7 @@ function handleMessageChange(event) {
   }
 
   if(messageLength > 2000) {
-    event.target.value = message.slice(0, 2000);
+    event.target.value = message.slice(0, 2000-1);
     return;
   }
 
