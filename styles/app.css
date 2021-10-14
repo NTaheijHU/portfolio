@@ -112,7 +112,7 @@ body {
   position: fixed;
   bottom: 2%;
   right: 1%;
-  z-index: 999999;
+  z-index: 999999 !important;
 }
 
 .dark-mode .dark-mode {
