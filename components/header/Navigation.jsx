@@ -1,5 +1,6 @@
 import NavItem from "./NavItem";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 import aboutInfo from '../../data/about.json';
@@ -66,9 +67,9 @@ export default function Navigation() {
       <nav className="bg-white dark:bg-gray-700 shadow-sm py-6 text-gray-700 dark:text-white topbar">
         <div className="flex justify-between max-w-7xl mx-auto xl:px-0 px-4">
           <div className="order-last md:order-first flex items-center">
-            <a href="/" role="button" aria-label="Home">
+            <Link href="/"><a role="button" aria-label="Home">
               <h1 className="text-gray-900 dark:text-white text-3xl font-bold uppercase">{aboutInfo.name}</h1>
-            </a>
+            </a></Link>
           </div>
           <div className="hidden md:flex items-center text-gray-500 dark:text-white text-md">
             {navItems.map((item) => {
