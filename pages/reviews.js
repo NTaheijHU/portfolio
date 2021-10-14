@@ -15,7 +15,7 @@ export function Reviews(props) {
         {/* Review Overview */}
         <div id="review-overview">
           <br />
-          <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
+          <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-16">
               <ReviewOverviewCard
                 title={"Klanten Reviews (" + props.reviewInfo.length + ")"}  
                 reviews={props.reviewInfo}   
@@ -26,7 +26,7 @@ export function Reviews(props) {
         
         {/* Reviews */}
         <div id="reviews">
-          <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
+          <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-16">
             { props.reviewInfo.length > 0 && props.reviewInfo.map((review) => {
                 return (
                   <ReviewCard 

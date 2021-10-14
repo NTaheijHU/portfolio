@@ -36,7 +36,7 @@ export function Portfolio(props) {
       {/* Portfolio */}
       <div id="portfolio">
         <br />
-        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
+        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-16">
             <ImageCard
               title={props.aboutInfo.projectsTitle}
               text={props.aboutInfo.projectsText}
@@ -59,9 +59,9 @@ export function Portfolio(props) {
     
       {/* Projects */}
       <div id="projects">
-        <div className="container mb-2 mt-4 md:mt-8 mx-auto px-2 md:px-4">
+        <div className="container mb-2 mt-4 md:mt-8 mx-auto px-4 md:px-16">
           <div className="grid grid-cols-2 md:grid-cols-8">
-            <a className="ml-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 dark:bg-gray-600 dark:hover:gray-200 dark:text-gray-100 dark:hover:text-gray-300 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
+            <a className="mx-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 dark:bg-gray-600 dark:hover:gray-200 dark:text-gray-100 dark:hover:text-gray-300 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
               key="All"
               id="selected"
               onClick={(e) => {setSelectedSkill(e); setSkill("All")}}
@@ -71,7 +71,7 @@ export function Portfolio(props) {
             {
               props.skillsInfo.map((skill) => {
                 return (
-                  <a className="ml-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 dark:bg-gray-700 dark:hover:gray-200 dark:text-gray-100 dark:hover:text-gray-300 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
+                  <a className="mx-2 mt-2 bg-gray-300 hover:bg-gray-600 text-gray-700 hover:text-gray-200 dark:bg-gray-700 dark:hover:gray-200 dark:text-gray-100 dark:hover:text-gray-300 font-semibold text-center text-md py-3 px-8 rounded-xl duration-200 ease-in-out uppercase"
                     key={skill.name}
                     id="selectable"
                     onClick={(e) => {setSelectedSkill(e); setSkill(skill.name)}}
@@ -83,7 +83,7 @@ export function Portfolio(props) {
             }
           </div>
         </div>
-        <div className="container mb-12 mx-auto px-2 md:px-4">
+        <div className="container mb-12 mx-auto px-4 md:px-16">
           {
             props.projectInfo.map((project) => {
               if(project.skills.includes(skill.toUpperCase()) || skill === "All") {

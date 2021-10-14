@@ -14,7 +14,7 @@ export default function Contact(props) {
       {/* Contact */}
       <div id="contact">
           <br />
-          <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
+          <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-16">
               <ContactCard
                 endpoint={props.url}
                 title="Neem contact op"          

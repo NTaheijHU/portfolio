@@ -23,7 +23,7 @@ export function OverMij(props) {
       {/* About Me */}
       <div id="about-me">
         <br />
-        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
+        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-16">
             <ImageCard
               title={aboutInfo.name}
               text={aboutInfo.aboutTextLong}
@@ -48,7 +48,7 @@ export function OverMij(props) {
       <div id="skills">
         <br />
         <h1 className="text-6xl font-bold text-center mt-16 md:mt-20 text-blue-600">Mijn Skills</h1>
-        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-2 md:px-4">
+        <div className="container mb-12 mt-4 md:mt-8 mx-auto px-4 md:px-16">
           <div className="flex flex-wrap -mx-1 lg:-mx-4">
           {
             props.skillsInfo.length > 0 && props.skillsInfo.map((skill) => {
