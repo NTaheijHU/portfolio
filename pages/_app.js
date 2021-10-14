@@ -13,7 +13,23 @@ import { useEffect } from "react";
 function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
-    goDark();
+    if(!('theme' in localStorage)) {
+      if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+        switchDarkClasses();
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+      }
+    } else {
+      if(localStorage.theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        switchDarkClasses();
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
   });
 
   return (
@@ -43,12 +59,12 @@ function MyApp({ Component, pageProps }) {
 }
 
 function goDark() {
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  if (localStorage.theme === 'light') {
     document.documentElement.classList.add('dark');
-    localStorage.theme = 'light';
+    localStorage.theme = 'dark';
   } else {
     document.documentElement.classList.remove('dark');
-    localStorage.theme = 'dark';
+    localStorage.theme = 'light';
   }
 
   switchDarkClasses();
