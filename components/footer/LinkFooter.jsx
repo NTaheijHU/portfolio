@@ -19,15 +19,15 @@ export default function LinkFooter() {
           </div>
           <div className="w-full md:w-1/4 flex flex-col gap-4 pb-2 footer-panel">
             <h2 className="sm:pb-4 text-3xl">Over Mij</h2>
-            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="over-mij">Informatie</a>
-            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="over-mij#skills">Skills</a>
+            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="/over-mij">Informatie</a>
+            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="/over-mij#skills">Skills</a>
           </div>
           <div className="w-full md:w-1/4 flex flex-col gap-4 footer-panel">
             <h2 className="sm:pb-4 text-3xl">Portfolio</h2>
             {
               projectInfo.slice(0, 3).map((project) => {
                 return (
-                  <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href={project.link}
+                  <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href={"/" + project.link}
                   key={project.name}
                   >{project.name}</a>
                 )
@@ -36,9 +36,9 @@ export default function LinkFooter() {
           </div>
           <div className="w-full md:w-1/4 flex flex-col gap-4 pb-2 footer-panel">
             <h2 className="sm:pb-4 text-3xl">Links</h2>
-            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="contact">Contact</a>
-            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="reviews">Reviews</a>
-            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="portal">Portaal</a>
+            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="/contact">Contact</a>
+            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="/reviews">Reviews</a>
+            <a className="opacity-90 hover:text-gray-300 duration-200 ease-in-out" href="/portal">Portaal</a>
           </div>
         </div>
         <div className="opacity-90 pt-4">
