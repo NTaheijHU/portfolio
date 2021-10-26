@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
             <button onClick={goDark} role="button" id="toggle-dark" className="dark-mode">
                 <i className="fas fa-sun fa-2x" id="toggle-dark-icon"></i>
             </button>
-        </div>
+      </div>
     </>
   );
 }
