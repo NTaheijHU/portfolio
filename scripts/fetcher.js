@@ -47,7 +47,7 @@ async function main() {
   console.log('Query preperation time: '.blue + queryTime.green + 'μs'.cyan)
 
   // TODO: FIX ABOUT ENDPOINT
-  // await executeQuery('about', 'About');
+  await executeQuery('about', 'About');
   await executeQuery('skills', 'Skills');
   await executeQuery('projects', 'Projects');
   await executeQuery('reviews', 'Reviews');
@@ -80,6 +80,9 @@ async function executeQuery(query, name) {
           }
         });
       } else {
+        if(query === 'about') {
+          fetchData = fetchData[0];
+        }
         console.log(fetchData);
         rawData = JSON.stringify(fetchData);
         writeData(query, rawData);
