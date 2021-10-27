@@ -22,7 +22,7 @@ export default function ProjectCard(props) {
               <div className="lg:my-4 lg:mx-4 lg:col-span-1">
                 <img alt="Placeholder" src={props.image} />
                 <section>
-                  <div className="flex items-center  p-2 md:p-4 ">
+                  <div className="flex items-center p-2 md:p-4 ">
                     <a className="no-underline text-grey-darker dark:text-gray-100 mr-2" href="#">
                       <span className="hidden">Like</span>
                       <motion.div

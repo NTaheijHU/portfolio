@@ -21,7 +21,7 @@ export function Project(props) {
   const shouldReduceMotion = useReducedMotion();
 
   let animateHeart = shouldReduceMotion ? { scale: 1, color: '#db2777', origin: 0 } : { scale: 1.2, color: '#db2777', origin: 0 };
-	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', origin: 0 } : { scale: 1.2, color: '#1d4ed8', origin: 0 };
+	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#66a1ee', origin: 0 } : { scale: 1.2, color: '#66a1ee', origin: 0 };
  
   return (
     <div className="bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100">
@@ -37,14 +37,14 @@ export function Project(props) {
               image="https://picsum.photos/512/256/?random"
             >
               <section>
-                <div className="flex leading-tight p-2 md:p-4">
+                <div className="flex items-center p-2 md:p-4">
                 { props.project.githubLink &&
                   <a className="no-underline text-grey-darker mr-2" href={props.project.githubLink}>
                     <span className="hidden">Github</span>
                     <motion.i
                     whileHover= { animateIcon }
                     whileFocus= { animateIcon }
-                    className="fab fa-github fa-2x"></motion.i>
+                    className="fab fa-github fa-3x"></motion.i>
                   </a>
                 }
                 { props.project.websiteLink &&
@@ -53,26 +53,40 @@ export function Project(props) {
                     <motion.i
                     whileHover= { animateIcon }
                     whileFocus= { animateIcon }
-                    className="far fa-window-maximize fa-2x"></motion.i>
+                    className="far fa-window-maximize fa-3x"></motion.i>
                   </a>
                 }
-                  <div className="no-underline text-grey-darker mr-4">
+                  <div className="no-underline text-grey-darker">
                     <span className="hidden">Like</span>
-                    <motion.i
-                    whileHover= { animateHeart }
-                    whileFocus= { animateHeart }
-                    className="fa fa-heart fa-2x"></motion.i>
-                    <span className="ml-2 text-3xl text-gray-600 dark:text-gray-300">2</span>
+                      <motion.div
+                      whileHover= { animateHeart }
+                      whileFocus= { animateHeart }>
+                        <lord-icon
+                          src="https://cdn.lordicon.com/rjzlnunf.json"
+                          trigger="hover"
+                          colors="primary:#b4b4b4,secondary:#66a1ee"
+                          style={{"width": "64px", "height":"64px"}}>
+                        </lord-icon>
+                      </motion.div>
                   </div>
+                  <span className="mr-2 text-4xl text-gray-600 dark:text-gray-300">2</span>
                 { props.project.commits &&
-                  <div className="no-underline text-grey-darker mr-4">
-                    <span className="hidden">Commits</span>
-                    <motion.i
-                    whileHover= { animateIcon }
-                    whileFocus= { animateIcon }
-                    className="fas fa-code-branch fa-2x"></motion.i>
-                    <span className="ml-2 text-3xl text-gray-600 dark:text-gray-300">{props.project.commits}</span>
-                  </div>
+                  <>
+                    <div className="no-underline text-grey-darker">
+                      <span className="hidden">Commits</span>
+                      <motion.div
+                      whileHover= { animateHeart }
+                      whileFocus= { animateHeart }>
+                        <lord-icon
+                          src="https://cdn.lordicon.com/ybfcwnqv.json"
+                          trigger="hover"
+                          colors="primary:#b4b4b4,secondary:#66a1ee"
+                          style={{"width": "64px", "height":"64px"}}>
+                        </lord-icon>
+                      </motion.div>
+                    </div>
+                    <span className="text-4xl text-gray-600 dark:text-gray-300">{props.project.commits}</span>
+                  </>
                 }
                 </div>
                 <div className="flex leading-tight flex-wrap py-2 pl-0 md:pl-2 md:py-0">
