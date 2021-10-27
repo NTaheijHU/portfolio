@@ -41,6 +41,7 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         />
+        <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
       </Head>
       <div className="bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100" id="App">
         <Header />

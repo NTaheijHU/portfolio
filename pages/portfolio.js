@@ -20,7 +20,7 @@ export function Portfolio(props) {
 
   const shouldReduceMotion = useReducedMotion();
 
- 	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', origin: 0 } : { scale: 1.2, color: '#1d4ed8', origin: 0 };
+ 	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#66a1ee', origin: 0 } : { scale: 1.2, color: '#66a1ee', origin: 0 };
 
   let iterProjects = 0;
 
@@ -49,7 +49,7 @@ export function Portfolio(props) {
                     <motion.i
                     whileHover= { animateIcon }
                     whileFocus= { animateIcon }
-                    className="fab fa-github fa-2x"></motion.i>
+                    className="fab fa-github fa-3x"></motion.i>
                   </a>
                 </div>
               </section>

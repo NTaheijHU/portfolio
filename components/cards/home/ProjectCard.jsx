@@ -4,7 +4,7 @@ export default function ProjectCard(props) {
   const shouldReduceMotion = useReducedMotion();
 
   let animateHeart = shouldReduceMotion ? { scale: 1, color: '#db2777', origin: 0 } : { scale: 1.2, color: '#db2777', origin: 0 };
-	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', origin: 0 } : { scale: 1.2, color: '#1d4ed8', origin: 0 };
+	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#66a1ee', origin: 0 } : { scale: 1.2, color: '#66a1ee', origin: 0 };
 
   return(
     <div className="">
@@ -30,21 +30,27 @@ export default function ProjectCard(props) {
           </div>
         </section>
         <section>
-          <div className="flex leading-tight p-2 md:p-4 ">
+          <div className="flex items-center pl-2 pb-2">
             <a className="no-underline text-grey-darker mr-2" href="#">
               <span className="hidden">Like</span>
-              <motion.i
+              <motion.div
               whileHover= { animateHeart }
-              whileFocus= { animateHeart }
-              className="fa fa-heart fa-2x"></motion.i>
+              whileFocus= { animateHeart }>
+                <lord-icon
+                  src="https://cdn.lordicon.com/rjzlnunf.json"
+                  trigger="hover"
+                  colors="primary:#b4b4b4,secondary:#66a1ee"
+                  style={{"width": "64px", "height":"64px"}}>
+                </lord-icon>
+              </motion.div>
             </a>
           {props.githubLink &&
             <a className="no-underline text-grey-darker mr-2" href={props.githubLink} target="_blank">
               <span className="hidden">Github</span>
-              <motion.i
+              <motion.div
               whileHover= { animateIcon }
               whileFocus= { animateIcon }
-              className="fab fa-github fa-2x"></motion.i>
+              className="fab fa-github fa-3x"></motion.div>
             </a>
           }
           {props.websiteLink &&
@@ -53,7 +59,7 @@ export default function ProjectCard(props) {
               <motion.i
               whileHover= { animateIcon }
               whileFocus= { animateIcon }
-              className="far fa-window-maximize fa-2x"></motion.i>
+              className="far fa-window-maximize fa-3x"></motion.i>
             </a>
     }
           </div>

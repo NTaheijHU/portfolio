@@ -4,7 +4,7 @@ export default function ProjectCard(props) {
   const shouldReduceMotion = useReducedMotion();
 
   let animateHeart = shouldReduceMotion ? { scale: 1, color: '#db2777', origin: 0 } : { scale: 1.2, color: '#db2777', origin: 0 };
-	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', origin: 0 } : { scale: 1.2, color: '#1d4ed8', origin: 0 };
+	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#66a1ee', origin: 0 } : { scale: 1.2, color: '#66a1ee', origin: 0 };
    
   if(!props.mirrored) {
     return(
@@ -22,13 +22,19 @@ export default function ProjectCard(props) {
               <div className="lg:my-4 lg:mx-4 lg:col-span-1">
                 <img alt="Placeholder" src={props.image} />
                 <section>
-                  <div className="flex leading-tight p-2 md:p-4 ">
+                  <div className="flex items-center  p-2 md:p-4 ">
                     <a className="no-underline text-grey-darker dark:text-gray-100 mr-2" href="#">
                       <span className="hidden">Like</span>
-                      <motion.i
+                      <motion.div
                       whileHover= { animateHeart }
-                      whileFocus= { animateHeart }
-                      className="fa fa-heart fa-2x" />
+                      whileFocus= { animateHeart }>
+                        <lord-icon
+                          src="https://cdn.lordicon.com/rjzlnunf.json"
+                          trigger="hover"
+                          colors="primary:#b4b4b4,secondary:#66a1ee"
+                          style={{"width": "64px", "height":"64px"}}>
+                        </lord-icon>
+                      </motion.div>
                     </a>
                     { props.githubLink &&
                       <a className="no-underline text-grey-darker dark:text-gray-100 mr-2" href={props.githubLink} target="_blank">
@@ -36,7 +42,7 @@ export default function ProjectCard(props) {
                         <motion.i
                         whileHover= { animateIcon }
                         whileFocus= { animateIcon }
-                        className="fab fa-github fa-2x" />
+                        className="fab fa-github fa-3x" />
                       </a>
                     }
                     { props.websiteLink &&
@@ -45,7 +51,7 @@ export default function ProjectCard(props) {
                         <motion.i
                         whileHover= { animateIcon }
                         whileFocus= { animateIcon }
-                        className="far fa-window-maximize fa-2x" />
+                        className="far fa-window-maximize fa-3x" />
                       </a>
                     }
                     {
@@ -74,7 +80,7 @@ export default function ProjectCard(props) {
               <img alt="Placeholder" src={props.image} />
                 
             </div>
-            <div className="p-6 lg:col-span-2">
+            <div className="pt-4 pl-2 lg:col-span-2">
                 <h2 className="uppercase font-medium text-4xl mb-3">{props.title}</h2>
                 <p className="leading-normal text-xl">{props.text}&nbsp;
                   <a className="no-underline hover:underline text-blue-700 dark:text-blue-500" href={props.link}>
@@ -82,36 +88,42 @@ export default function ProjectCard(props) {
                   </a>
                 </p>
                 <section>
-                  <div className="flex leading-tight flex-wrap">
-                    <a className="no-underline text-grey-darker dark:text-gray-100 mr-2 pt-2 md:pt-4" href="#">
+                  <div className="flex items-center">
+                    <a className="no-underline text-grey-darker dark:text-gray-100 mr-2" href="#">
                       <span className="hidden">Like</span>
-                      <motion.i
+                      <motion.div
                       whileHover= { animateHeart }
-                      whileFocus= { animateHeart }
-                      className="fa fa-heart fa-2x"></motion.i>
+                      whileFocus= { animateHeart }>
+                        <lord-icon
+                          src="https://cdn.lordicon.com/rjzlnunf.json"
+                          trigger="hover"
+                          colors="primary:#b4b4b4,secondary:#66a1ee"
+                          style={{"width": "64px", "height":"64px"}}>
+                        </lord-icon>
+                      </motion.div>
                     </a>
                     { props.githubLink &&
-                      <a className="no-underline text-grey-darker dark:text-gray-100 mr-2 pt-2 md:pt-4" href={props.githubLink} target="_blank">
+                      <a className="no-underline text-grey-darker dark:text-gray-100 mr-2" href={props.githubLink} target="_blank">
                         <span className="hidden">Github</span>
                         <motion.i
                         whileHover= { animateIcon }
                         whileFocus= { animateIcon }
-                        className="fab fa-github fa-2x" />
+                        className="fab fa-github fa-3x" />
                       </a>
                     }
                     { props.websiteLink &&
-                      <a className="no-underline text-grey-darker mr-2 pt-2 md:pt-4" href={props.websiteLink} target="_blank">
+                      <a className="no-underline text-grey-darker dark:text-gray-100 mr-2" href={props.websiteLink} target="_blank">
                         <span className="hidden">Website</span>
                         <motion.i
                         whileHover= { animateIcon }
                         whileFocus= { animateIcon }
-                        className="far fa-window-maximize fa-2x" />
+                        className="far fa-window-maximize fa-3x" />
                       </a>
                     }
                     {
                       props.skills.map((skill) => {
                         return (
-                          <a className="mt-2 md:mt-4 mr-2 bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100 dark:text-gray-100 font-semibold text-center text-md py-2 px-2 rounded-xl duration-200 ease-in-out"
+                          <a className="ml-2 bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100 dark:text-gray-100 font-semibold text-center text-md py-2 px-2 rounded-xl duration-200 ease-in-out"
                           key={skill}>
                             {skill}
                         </a>

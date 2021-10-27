@@ -14,7 +14,7 @@ export function OverMij(props) {
   
   const shouldReduceMotion = useReducedMotion();
 
- 	let animateIcon = shouldReduceMotion ? { scale: 1, color: '#1d4ed8', originX: 0 } : { scale: 1.2, color: '#1d4ed8', originX: 0 };
+ 	let animateIcon = shouldReduceMotion ? { color: '#66a1ee', originX: 0 } : { color: '#66a1ee', originX: 0 };
 
   return (
     <div className="bg-gray-200 bg-opacity-60 dark:bg-gray-800 dark:bg-opacity-100">
@@ -29,16 +29,20 @@ export function OverMij(props) {
               text={aboutInfo.aboutTextLong}
               image={aboutInfo.image}
             >
-              <motion.div className="flex leading-tight p-2 md:p-4"
+              <motion.div className="flex items-center"
               whileHover= { animateIcon }
               whileFocus= { animateIcon }
               >
                 <a className="no-underline" href="#">
                   <span className="hidden">Download CV</span>
-                  <i className="fa fa-download fa-2x mr-2" />
-                  <span className="text-center text-xl text-grey-darker my-1">Download CV</span>
+                  <lord-icon
+                      src="https://cdn.lordicon.com/nocovwne.json"
+                      trigger="hover"
+                      colors="primary:#b4b4b4,secondary:#66a1ee"
+                      style={{"width": "64px", "height":"64px"}}>
+                  </lord-icon>
+                  <span className="text-center align-middle text-xl text-grey-darker my-1">Download CV</span>
                 </a>
-
               </motion.div>
             </ImageCard>
         </div>
