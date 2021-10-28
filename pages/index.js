@@ -104,16 +104,22 @@ export function Home(props) {
             }
           </div>
         </div>
-        <PopInWhenVisible
-              classes="grid justify-items-center"
-              delay="0.0"
-              duration="0.4"
-              top="0"
-        >
-          <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-6 px-6 rounded-lg">
-            Bekijk meer projecten
-          </button>
-        </PopInWhenVisible>
+
+        { props.projectInfo.length > 3 && 
+          <PopInWhenVisible
+          classes="grid justify-items-center"
+          delay="0.0"
+          duration="0.4"
+          top="0"
+              >
+            <a href="/portfolio">
+              <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-6 px-6 rounded-lg">
+                Bekijk meer projecten
+              </button>
+            </a>
+          </PopInWhenVisible>
+        }
+
       </div>
       
       {/* Reviews */}
