@@ -76,7 +76,7 @@ export function Project(props) {
                 }
                 { props.project.commits &&
                   <>
-                    <div className="no-underline text-grey-darker">
+                    <a className="no-underline text-grey-darker" href={props.project.githubLink + "/stargazers"}>
                       <span className="hidden">Commits</span>
                       <motion.div
                       whileHover= { animateHeart }
@@ -88,8 +88,8 @@ export function Project(props) {
                           style={{"width": "64px", "height":"64px"}}>
                         </lord-icon>
                       </motion.div>
-                    </div>
-                    <span className="text-4xl text-gray-600 dark:text-gray-300">{props.project.commits ? props.project.commits : "0"}</span>
+                    </a>
+                    <a className="text-4xl text-gray-600 dark:text-gray-300" href={props.project.githubLink + "/commits"}>{props.project.commits ? props.project.commits : "0"}</a>
                   </>
                 }
                 </div>
