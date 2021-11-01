@@ -9,7 +9,8 @@
     "build": "next build && next export",
     "fetch-and-build": "node scripts/fetcher.js && next build && next export",
     "start": "next start",
-    "cleanup": "rimraf .next/cache"
+    "cleanup": "rimraf .next/cache",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@hcaptcha/react-hcaptcha": "^0.3.7",
@@ -25,7 +26,10 @@
     "react-responsive-carousel": "^3.2.21"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.1",
     "autoprefixer": "^10.3.4",
+    "cypress": "^8.7.0",
+    "cypress-dark": "^1.8.3",
     "postcss": "^8.3.6",
     "rimraf": "^3.0.2",
     "tailwindcss": "^2.2.15"
