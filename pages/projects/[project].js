@@ -58,7 +58,7 @@ export function Project(props) {
                 }
                 { props.project.stars &&
                   <>
-                    <a className="no-underline text-grey-darker" href="https://github.com/ntaheij/codebin/stargazers">
+                    <a className="no-underline text-grey-darker" href={props.project.githubLink + "/stargazers"}>
                       <span className="hidden">Like</span>
                         <motion.div
                         whileHover= { animateHeart }
@@ -71,7 +71,7 @@ export function Project(props) {
                           </lord-icon>
                         </motion.div>
                     </a>
-                    <a className="text-4xl text-gray-600 dark:text-gray-300" href="https://github.com/ntaheij/codebin/stargazers">{props.project.stars ? props.project.stars : "0"}</a>
+                    <a className="text-4xl text-gray-600 dark:text-gray-300" href={props.project.githubLink + "/stargazers"}>{props.project.stars ? props.project.stars : "0"}</a>
                   </>
                 }
                 { props.project.commits &&
