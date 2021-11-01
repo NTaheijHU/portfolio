@@ -122,7 +122,7 @@ export function Portfolio(props) {
           }
           { iterProjects === 0 &&
             <div className="text-red-500 ml-2 mt-4 md:mt-8">
-              <p className="text-3xl md:text-4xl">Geen projecten gevonden.</p>
+              <h3 className="text-3xl md:text-4xl">Geen projecten gevonden.</h3>
             </div>
           }
         </div>

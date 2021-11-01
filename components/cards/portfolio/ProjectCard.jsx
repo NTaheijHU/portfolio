@@ -12,7 +12,7 @@ export default function ProjectCard(props) {
         <section className="overflow-hidden rounded-lg shadow-lg bg-gray-50 bg-opacity-90 dark:bg-gray-700 dark:bg-opacity-100 dark:text-gray-100 mt-2 md:mt-4">
           <div className="lg:relative m-0 lg:grid lg:grid-cols-3">
             <div className="p-6 lg:col-span-2">
-                <h2 className="uppercase font-medium text-4xl mb-3">{props.title}</h2>
+                <h3 className="uppercase font-medium text-4xl mb-3">{props.title}</h3>
                 <p className="leading-normal text-xl">{props.text}&nbsp;
                   <a className="no-underline hover:underline text-blue-700" href={props.link}>
                     Lees meer...
@@ -81,7 +81,7 @@ export default function ProjectCard(props) {
                 
             </div>
             <div className="pt-4 pl-2 lg:col-span-2">
-                <h2 className="uppercase font-medium text-4xl mb-3">{props.title}</h2>
+                <h3 className="uppercase font-medium text-4xl mb-3">{props.title}</h3>
                 <p className="leading-normal text-xl">{props.text}&nbsp;
                   <a className="no-underline hover:underline text-blue-700 dark:text-blue-500" href={props.link}>
                     Lees meer...
