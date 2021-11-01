@@ -76,7 +76,7 @@ export function Project(props) {
                 }
                 { props.project.commits &&
                   <>
-                    <a className="no-underline text-grey-darker" href={props.project.githubLink + "/stargazers"}>
+                    <a className="no-underline text-grey-darker" href={props.project.githubLink + "/commits"}>
                       <span className="hidden">Commits</span>
                       <motion.div
                       whileHover= { animateHeart }
