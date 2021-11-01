@@ -56,20 +56,24 @@ export function Project(props) {
                     className="far fa-window-maximize fa-3x"></motion.i>
                   </a>
                 }
-                  <div className="no-underline text-grey-darker">
-                    <span className="hidden">Like</span>
-                      <motion.div
-                      whileHover= { animateHeart }
-                      whileFocus= { animateHeart }>
-                        <lord-icon
-                          src="https://cdn.lordicon.com/rjzlnunf.json"
-                          trigger="hover"
-                          colors="primary:#b4b4b4,secondary:#66a1ee"
-                          style={{"width": "64px", "height":"64px"}}>
-                        </lord-icon>
-                      </motion.div>
-                  </div>
-                  <span className="mr-2 text-4xl text-gray-600 dark:text-gray-300">2</span>
+                { props.project.stars &&
+                  <>
+                    <div className="no-underline text-grey-darker">
+                      <span className="hidden">Like</span>
+                        <motion.div
+                        whileHover= { animateHeart }
+                        whileFocus= { animateHeart }>
+                          <lord-icon
+                            src="https://cdn.lordicon.com/rjzlnunf.json"
+                            trigger="hover"
+                            colors="primary:#b4b4b4,secondary:#66a1ee"
+                            style={{"width": "64px", "height":"64px"}}>
+                          </lord-icon>
+                        </motion.div>
+                    </div>
+                    <span className="text-4xl text-gray-600 dark:text-gray-300">{props.project.stars ? props.project.stars : "0"}</span>
+                  </>
+                }
                 { props.project.commits &&
                   <>
                     <div className="no-underline text-grey-darker">
@@ -85,7 +89,7 @@ export function Project(props) {
                         </lord-icon>
                       </motion.div>
                     </div>
-                    <span className="text-4xl text-gray-600 dark:text-gray-300">{props.project.commits}</span>
+                    <span className="text-4xl text-gray-600 dark:text-gray-300">{props.project.commits ? props.project.commits : "0"}</span>
                   </>
                 }
                 </div>

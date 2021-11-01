@@ -74,6 +74,11 @@ async function executeQuery(query, name) {
             data.push(project);
           });
 
+          await getStars(project.githubLink).then(stars => {
+            project.stars = stars;
+            data.push(project);
+          });
+
           if(data.length === fetchData.length) {
             rawData = JSON.stringify(data);
             writeData(query, rawData);
@@ -93,6 +98,38 @@ async function executeQuery(query, name) {
       const rTime = new Date().getTime() - projecTime.getTime() + "";
       console.log(name.blue + ' Query Execution Time: '.blue + rTime.green + 'ms'.cyan);
   })
+}
+
+async function getStars(link) {
+
+  const fetchLink = link.replace('https://github.com/', 'https://api.github.com/repos/');
+
+  let amount = 0;
+  let lastAmount = 100;
+  let page = 0;
+
+  while (lastAmount === 100) {
+    page++;
+    await fetch(fetchLink + '/stargazers' + '?per_page=100&page=' + page, {
+      headers: {
+        "User-Agent": "ntaheij",
+        // "Authorization": 'token ' + process.env.GITHUB_TOKEN
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      amount += data.length;
+      lastAmount = data.length;
+    })
+    .catch(err => {
+      if(savePath === './data/dev/') {
+        console.log(err);
+        return;
+      }
+    });
+  }
+
+  return amount;
 }
 
 async function getCommits(link) {
