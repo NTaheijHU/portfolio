@@ -88,21 +88,6 @@ export function Portfolio(props) {
             props.projectInfo.map((project) => {
               if(project.skills.includes(skill.toUpperCase()) || skill === "All") {
                 iterProjects++;
-                if(iterProjects % 2 === 0) {
-                  return (
-                    <ProjectCard
-                    key={project.name}
-                    image={project.image}
-                    title={project.name}
-                    link={project.link}
-                    mirrored={false}
-                    text={project.shortDescription}
-                    githubLink={project.githubLink}
-                    websiteLink={project.websiteLink}    
-                    skills={project.skills}
-                    />
-                  )
-                } else {
                   return (
                     <ProjectCard
                     key={project.name}
@@ -112,11 +97,10 @@ export function Portfolio(props) {
                     mirrored={true}
                     text={project.shortDescription}
                     githubLink={project.githubLink}
-                    websiteLink={project.websiteLink}
+                    websiteLink={project.websiteLink}    
                     skills={project.skills}
                     />
                   )
-                }
               }
             })
           }
