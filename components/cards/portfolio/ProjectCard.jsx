@@ -14,7 +14,7 @@ export default function ProjectCard(props) {
             <div className="p-6 lg:col-span-2">
                 <h3 className="uppercase font-medium text-4xl mb-3">{props.title}</h3>
                 <p className="leading-normal text-xl">{props.text}&nbsp;
-                  <a className="no-underline hover:underline text-blue-700" href={props.link}>
+                  <a className="no-underline hover:underline text-blue-700 dark:text-blue-500" href={props.link}>
                     Lees meer...
                   </a>
                 </p>
@@ -22,7 +22,7 @@ export default function ProjectCard(props) {
               <div className="lg:my-4 lg:mx-4 lg:col-span-1">
                 <img alt="Placeholder" src={props.image} />
                 <section>
-                  <div className="flex items-center p-2 md:p-4 ">
+                  <div className="flex flex-wrap items-center p-2 md:p-4">
                     <a className="no-underline text-grey-darker dark:text-gray-100 mr-2" href="#">
                       <span className="hidden">Like</span>
                       <motion.div
@@ -88,7 +88,7 @@ export default function ProjectCard(props) {
                   </a>
                 </p>
                 <section>
-                  <div className="flex items-center">
+                  <div className="flex flex-wrap items-center p-2 md:p-4">
                     <a className="no-underline text-grey-darker dark:text-gray-100 mr-2" href="#">
                       <span className="hidden">Like</span>
                       <motion.div
